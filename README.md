@@ -9,3 +9,5 @@ Currently, two official plugins are available:
 
 Dependencies:
 Node 20.11.0
+Yarn 1.22.22
+React 18.3.1

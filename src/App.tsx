@@ -4,17 +4,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
 
-function App() {
+const App = () => {
   useEffect(() => {
-    toast('Welcome to Algorithm Visualizer');
+    toast('Welcome to Big O Circus');
   }, []);
 
   return (
-    <div className='w-full h-[100vh]'>
+    <div className='w-full h-[100vh] overflow-x-hidden '>
       <AlgorithmVisualizer />
       <ToastContainer />
     </div>
   );
-}
+};
 
 export default App;
