@@ -1,9 +1,9 @@
-import * as THREE from "three";
-import Stats from "three/addons/libs/stats.module.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import * as THREE from 'three';
+import Stats from 'three/addons/libs/stats.module.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 export class Algorithm3DPreviewer {
   container = document.getElementById(
-    "algorithmVisualizer3dViewerCanvasElement"
+    'algorithmVisualizer3dViewerCanvasElement'
   );
   stats = new Stats();
   clock = new THREE.Clock();
@@ -19,7 +19,7 @@ export class Algorithm3DPreviewer {
   constructor() {
     this.init();
     this.animate();
-    window.addEventListener("resize", this.onWindowResize, false);
+    window.addEventListener('resize', this.onWindowResize, false);
   }
   onWindowResize() {
     this.camera.aspect = window.innerWidth / window.innerHeight;
