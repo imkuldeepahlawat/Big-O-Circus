@@ -3,6 +3,8 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
+import Layout from './components/Layout';
+import DfsAlgorithmCircus from './components/algorithms/DfsAlgorithmCircus';
 
 const App = () => {
   useEffect(() => {
@@ -10,10 +12,10 @@ const App = () => {
   }, []);
 
   return (
-    <div className='w-full h-[100vh] overflow-x-hidden '>
-      <AlgorithmVisualizer />
+    <Layout>
+      <DfsAlgorithmCircus />
       <ToastContainer />
-    </div>
+    </Layout>
   );
 };
 

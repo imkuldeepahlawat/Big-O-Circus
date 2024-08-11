@@ -77,9 +77,7 @@ const AlgorithmVisualizer: React.FC = () => {
   // const algorithmVisualizer3dViewerRef = useRef<Algorithm3DPreviewer | null>(null);
 
   useEffect(() => {
-    // Effect implementation
     if (algoCircusDomElementRef.current) {
-      // console.log(algoCircusDomElementRef, 'Visual');
       algoCircusViewerRef.current = new Algorithm3DPreviewer(
         algoCircusDomElementRef.current
       );
@@ -87,10 +85,10 @@ const AlgorithmVisualizer: React.FC = () => {
   }, []);
 
   return (
-    <div className='w-full h-full'>
+    <>
       <canvas ref={algoCircusDomElementRef}></canvas>
       {/* <ThreeScene /> */}
-    </div>
+    </>
   );
 };
 
