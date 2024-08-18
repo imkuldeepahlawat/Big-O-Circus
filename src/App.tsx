@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
 import Layout from './components/Layout';
-import DfsAlgorithmCircus from './components/algorithms/DfsAlgorithmCircus';
+
+import ArrayDataStructure from './components/data-structures/ArrayDataStructure';
 
 const App = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <Layout>
-      <DfsAlgorithmCircus />
+      <ArrayDataStructure />
       <ToastContainer />
     </Layout>
   );

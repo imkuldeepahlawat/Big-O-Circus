@@ -10,6 +10,7 @@ export class Algorithm3DPreviewer {
   public scene: THREE.Scene;
   public controls: OrbitControls;
   public cube: THREE.Mesh;
+  public renderEnable: Boolean = true;
 
   constructor(public viewerElement: HTMLCanvasElement) {
     this.stats = new Stats();
@@ -25,6 +26,9 @@ export class Algorithm3DPreviewer {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.scene = new THREE.Scene();
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.addEventListener('change', () => {
+      this.enableRender();
+    });
 
     if (viewerElement) {
       viewerElement.parentElement?.appendChild(this.stats.dom);
@@ -33,6 +37,7 @@ export class Algorithm3DPreviewer {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     this.cube = new THREE.Mesh(geometry, material);
+    this.cube.visible = false;
     this.scene.add(this.cube);
 
     this.animate = this.animate.bind(this);
@@ -51,6 +56,9 @@ export class Algorithm3DPreviewer {
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
+  enableRender(): void {
+    this.renderEnable = true;
+  }
 
   animate(): void {
     requestAnimationFrame(this.animate);
@@ -59,10 +67,11 @@ export class Algorithm3DPreviewer {
 
     this.cube.rotation.x += 0.01;
     this.cube.rotation.y += 0.01;
-
-    this.controls.update();
-
-    this.renderer.render(this.scene, this.camera);
+    if (this.renderEnable) {
+      this.renderEnable = false;
+      this.controls.update();
+      this.renderer.render(this.scene, this.camera);
+    }
   }
 
   disposeCircus(): void {
