@@ -8,11 +8,13 @@ interface LayoutProps {
 const RootLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className='w-full h-[100vh] '>
-      <header className='w-full h-[5%] flex justify-between items-center px-3 '>
+      <header className='w-full h-[5%] flex justify-center md:justify-between items-center px-3 '>
         <Link to={'/'}>
-          <h1 className='text-3xl font-bold cursor-pointer'>Big O Circus</h1>
+          <h1 className='text-xl text-center md:text-3xl font-bold cursor-pointer'>
+            Big O Circus
+          </h1>
         </Link>
-        <ul className='flex gap-3  uppercase'>
+        <ul className='md:flex gap-3  uppercase hidden md:block'>
           <Link to={'data-structure'}>
             <li className='rounded-md border  px-4 cursor-pointer'>
               Data Structure

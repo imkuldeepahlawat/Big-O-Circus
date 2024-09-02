@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaCircle } from 'react-icons/fa6';
 import { Outlet, Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
 import {
   algorithmsCompoentLinkList,
   dataStructuresComponentLinkList,
@@ -10,7 +12,7 @@ type Props = {};
 
 const Home = (props: Props) => {
   return (
-    <div className='w-full  h-full border px-3 overflow-y-scroll bg-white'>
+    <div className='w-full  h-full border px-3  bg-white'>
       <ul className='flex gap-3 p-3'>
         <li className='flex gap-3 items-center'>
           <FaCircle className='text-green-500 text-sm ' />
@@ -21,47 +23,60 @@ const Home = (props: Props) => {
           <span>Coming Soon</span>
         </li>
       </ul>
-      <div className='flex flex-col gap-3 py-3'>
-        <h2 className='text-4xl uppercase'>
+      <div className='flex flex-col gap-3 py-3 w-full'>
+        <h2 className='text-center text-2xl md:text-left md:text-4xl uppercase'>
           <Link to={`/datastructure`}>Data Structures</Link>
         </h2>
-        <div className='flex  gap-3 items-center px-3 flex-wrap'>
+        <div className='px-3 grid grid-cols-2 md:grid-cols-8 w-full gap-2'>
           {dataStructuresComponentLinkList.map(
-            (dataStructure: componentLinkTT, index) => (
-              <div
-                key={index}
-                className={`py-2 w-[250px]  border rounded-md flex justify-center items-center hover:scale-105 bg-slate-200 duration-500 ${dataStructure.tooltip === '' ? '' : 'tooltip tooltip-top'}`}
-                data-tip={dataStructure.tooltip}
-              >
-                <a
-                  href={dataStructure.link}
-                  className='flex items-center gap-1'
-                >
-                  <span>{dataStructure.name}</span>
-                  <FaCircle className='text-red-500 text-sm' />
-                </a>
-              </div>
+            (dsLinkObj: componentLinkTT, inx) => (
+              <Link to={dsLinkObj.link} key={dsLinkObj.name + inx}>
+                <Button className='w-full text-xs md:text-md relative flex   justify-between bg-transparent text-black hover:text-white hover:bg-black duration-500 shadow-xl border-2'>
+                  <div className='flex gap-2'>
+                    <span className='relative flex h-3 w-3'>
+                      <span
+                        className={`animate-ping absolute inline-flex h-full w-full rounded-full  opacity-75`}
+                        style={{ backgroundColor: dsLinkObj.color }}
+                      ></span>
+                      <span
+                        className={`relative inline-flex rounded-full h-3 w-3 `}
+                        style={{ backgroundColor: dsLinkObj.color }}
+                      ></span>
+                    </span>
+                    <span>{dsLinkObj.name}</span>
+                  </div>
+                  <div className=''></div>
+                </Button>
+              </Link>
             )
           )}
         </div>
       </div>
-      <div className='flex flex-col gap-3 py-3'>
-        <h2 className='text-4xl uppercase'>Algorithms</h2>
-        <div className='flex  gap-3 items-center px-3 flex-wrap'>
-          {algorithmsCompoentLinkList.map(
-            (algorithm: componentLinkTT, index) => (
-              <div
-                key={index}
-                className={`py-2 w-[250px]  border rounded-md flex justify-center items-center hover:scale-105 bg-slate-200 duration-500${algorithm.tooltip === '' ? '' : 'tooltip tooltip-top'}`}
-                data-tip={algorithm.tooltip}
-              >
-                <a href={algorithm.link} className='flex items-center gap-1'>
-                  <span>{algorithm.name}</span>
-                  <FaCircle className='text-red-500 text-sm' />
-                </a>
-              </div>
-            )
-          )}
+      <div className='flex flex-col gap-3 py-3 w-full'>
+        <h2 className='text-center text-2xl md:text-left md:text-4xl uppercase'>
+          <Link to={`/algorithms`}>Algorithms</Link>
+        </h2>
+        <div className='px-3 grid grid-cols-2 md:grid-cols-8 w-full gap-2'>
+          {algorithmsCompoentLinkList.map((algoLinkObj, inx) => (
+            <Link to={`/algorithms`} key={algoLinkObj.name + inx}>
+              <Button className='w-full text-xs md:text-md relative flex   justify-between bg-black text-white hover:text-black hover:bg-transparent  shadow-xl border-2'>
+                <div className='flex gap-2'>
+                  <span className='relative flex h-3 w-3'>
+                    <span
+                      className={`animate-ping absolute inline-flex h-full w-full rounded-full   opacity-75`}
+                      style={{ backgroundColor: algoLinkObj.color }}
+                    ></span>
+                    <span
+                      className={`relative inline-flex rounded-full h-3 w-3 bg-${algoLinkObj.color}-500`}
+                      style={{ backgroundColor: algoLinkObj.color }}
+                    ></span>
+                  </span>
+                  <span>{algoLinkObj.name}</span>
+                </div>
+                <div className=''></div>
+              </Button>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
