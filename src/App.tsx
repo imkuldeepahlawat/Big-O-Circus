@@ -3,20 +3,25 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast, ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
-import Layout from './components/Layout';
-
-import ArrayDataStructure from './components/data-structures/ArrayDataStructure';
+import RootLayout from './components/RootLayout';
+import { Outlet, RouterProvider, Routes, Route } from 'react-router-dom';
+import dsRoutesList from './routes/ds-routes';
+// import ArrayDataStructure from './components/data-structures/ArrayDataStructure';
+import Home from './pages/Home';
+import DataStructuresDashboard from './pages/DataStructuresDashboard';
 
 const App = () => {
   useEffect(() => {
-    toast('Welcome to Big O Circus');
+    //     toast('Welcome to Big O Circus');
   }, []);
+  // <Suspense fallback={<div>Loading...</div>}>
 
   return (
-    <Layout>
-      <ArrayDataStructure />
-      <ToastContainer />
-    </Layout>
+    <RootLayout>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+    </RootLayout>
   );
 };
 

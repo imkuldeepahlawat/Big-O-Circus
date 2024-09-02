@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 // import { Algorithm3DPreviewer } from '../libs/algorithm3DPreviewer';
 
 import * as THREE from 'three';
-import { Algorithm3DPreviewer } from '../libs/algorithm3DPreviewer';
+import { Algorithm3DPreviewer } from '../lib/algorithm3DPreviewer';
 
 export const ThreeScene: React.FC = () => {
   const mountRef = useRef<HTMLCanvasElement | null>(null);

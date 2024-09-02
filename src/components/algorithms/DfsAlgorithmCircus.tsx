@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Algorithm3DPreviewer } from '../../libs/algorithm3DPreviewer';
+import { Algorithm3DPreviewer } from '../../lib/algorithm3DPreviewer';
 
 type Props = {};
 
