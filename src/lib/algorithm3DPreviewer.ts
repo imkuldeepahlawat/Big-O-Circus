@@ -48,9 +48,12 @@ export class Algorithm3DPreviewer {
     this.controls.addEventListener('change', () => {
       this.enableRender();
     });
-    this.stats.dom.style.position = 'absolute';
-    this.stats.dom.style.right = '0px';
-    // this.stats.dom.style.bottom = '0px';
+    if (this.stats?.domElement) {
+      this.stats.domElement.style.left = '';
+      this.stats.domElement.style.right = '0';
+      this.stats.domElement.style.zIndex = '50';
+    }
+
     // Append stats to the DOM
     if (viewerElement) {
       viewerElement.parentElement?.appendChild(this.stats.dom);
