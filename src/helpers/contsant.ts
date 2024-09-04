@@ -1,10 +1,10 @@
 export const dataStructuresComponentLinkList: componentLinkTT[] = [
   // Basic Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Array',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-array',
   },
   {
     color: 'red',

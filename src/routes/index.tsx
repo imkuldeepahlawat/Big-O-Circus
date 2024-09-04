@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import App from '../App';
 import LoadingComponent from '../components/LoadingComponent';
+import ArrayDataStructure from '@/components/data-structures/ArrayDataStructure';
+import LinkedListDataStructure from '@/components/data-structures/LinkedlistDataStructure';
 const QueueDataStructure = lazy(
   () => import('../components/data-structures/QueueDataStructure')
 );
@@ -37,6 +39,14 @@ const routes: RouteObject[] = [
     ),
   },
   {
+    path: '/ds-array',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <ArrayDataStructure />
+      </Suspense>
+    ),
+  },
+  {
     path: '/ds-stack',
     element: (
       <Suspense fallback={<LoadingComponent />}>
@@ -44,11 +54,20 @@ const routes: RouteObject[] = [
       </Suspense>
     ),
   },
+  // ArrayDataStructure
   {
     path: '/ds-queue',
     element: (
       <Suspense fallback={<LoadingComponent />}>
         <QueueDataStructure />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/ds-linklist',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <LinkedListDataStructure />
       </Suspense>
     ),
   },
