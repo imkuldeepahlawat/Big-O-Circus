@@ -226,7 +226,8 @@ const LinkedListDataStructure: React.FC<Props> = () => {
           </h3>
           <p>
             A linked list is a linear data structure where elements are stored
-            in nodes. Each node points to the next node in the sequence.
+            in nodes. Each node points to the next node in the sequence. (i Know
+            a person who know a person)
           </p>
         </div>
       </div>
