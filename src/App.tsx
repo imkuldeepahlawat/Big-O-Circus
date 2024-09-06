@@ -9,6 +9,8 @@ import dsRoutesList from './routes/ds-routes';
 // import ArrayDataStructure from './components/data-structures/ArrayDataStructure';
 import Home from './pages/Home';
 import DataStructuresDashboard from './pages/DataStructuresDashboard';
+import BfsAlgorithmCircus from './components/algorithms/BfsAlgorithmCircus';
+import DfsAlgorithmCircus from './components/algorithms/DfsAlgorithmCircus';
 
 const App = () => {
   useEffect(() => {
@@ -17,11 +19,14 @@ const App = () => {
   // <Suspense fallback={<div>Loading...</div>}>
 
   return (
-    <RootLayout>
-      <Routes>
-        <Route path='/' element={<Home />}></Route>
-      </Routes>
-    </RootLayout>
+    // <RootLayout>
+    //   <Routes>
+    //     <Route path='/' element={<Home />}></Route>
+    //   </Routes>
+    // </RootLayout>
+    <>
+      <DfsAlgorithmCircus />
+    </>
   );
 };
 

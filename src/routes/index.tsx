@@ -4,6 +4,9 @@ import App from '../App';
 import LoadingComponent from '../components/LoadingComponent';
 import ArrayDataStructure from '@/components/data-structures/ArrayDataStructure';
 import LinkedListDataStructure from '@/components/data-structures/LinkedlistDataStructure';
+import BinaryTreeDataStructure from '@/components/data-structures/BinaryTreeDataStructure';
+import BfsAlgorithmCircus from '@/components/algorithms/BfsAlgorithmCircus';
+import DfsAlgorithmCircus from '@/components/algorithms/DfsAlgorithmCircus';
 const QueueDataStructure = lazy(
   () => import('../components/data-structures/QueueDataStructure')
 );
@@ -68,6 +71,30 @@ const routes: RouteObject[] = [
     element: (
       <Suspense fallback={<LoadingComponent />}>
         <LinkedListDataStructure />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/ds-binarytree',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <BinaryTreeDataStructure />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/algo-bfs',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <BfsAlgorithmCircus />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/algo-dfs',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <DfsAlgorithmCircus />
       </Suspense>
     ),
   },
