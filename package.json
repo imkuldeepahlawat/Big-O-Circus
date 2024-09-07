@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "format": "npx prettier --write .",
     "prepare": "husky install",
-    "predeploy": "npm run build",
+    "predeploy": "vite build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
