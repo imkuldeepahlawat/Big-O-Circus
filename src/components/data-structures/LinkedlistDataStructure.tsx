@@ -108,7 +108,7 @@ const LinkedListDataStructure: React.FC<Props> = () => {
     let newValue;
     while (true) {
       let val = Math.floor(Math.random() * 1000);
-      if (linkedList.includes(val)) {
+      if (linkedList?.includes(val)) {
         continue;
       } else {
         newValue = val;

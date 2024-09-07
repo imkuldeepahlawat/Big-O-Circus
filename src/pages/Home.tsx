@@ -58,7 +58,7 @@ const Home = (props: Props) => {
         </h2>
         <div className='px-3 grid grid-cols-2 md:grid-cols-8 w-full gap-2'>
           {algorithmsCompoentLinkList.map((algoLinkObj, inx) => (
-            <Link to={`/algorithms`} key={algoLinkObj.name + inx}>
+            <Link to={algoLinkObj.link} key={algoLinkObj.name + inx}>
               <Button className='w-full text-xs md:text-md relative flex   justify-between bg-black text-white hover:text-black hover:bg-transparent  shadow-xl border-2'>
                 <div className='flex gap-2'>
                   <span className='relative flex h-3 w-3'>
