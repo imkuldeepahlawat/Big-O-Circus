@@ -19,14 +19,11 @@ const App = () => {
   // <Suspense fallback={<div>Loading...</div>}>
 
   return (
-    // <RootLayout>
-    //   <Routes>
-    //     <Route path='/' element={<Home />}></Route>
-    //   </Routes>
-    // </RootLayout>
-    <>
-      <DfsAlgorithmCircus />
-    </>
+    <RootLayout>
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+      </Routes>
+    </RootLayout>
   );
 };
 

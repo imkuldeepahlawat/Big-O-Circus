@@ -98,6 +98,15 @@ const routes: RouteObject[] = [
       </Suspense>
     ),
   },
+  {
+    path: '/ds-binary-tree',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <BinaryTreeDataStructure />
+      </Suspense>
+    ),
+  },
+  // BinaryTreeDataStructure
 ];
 
 const rootRouteList = createBrowserRouter(routes);
