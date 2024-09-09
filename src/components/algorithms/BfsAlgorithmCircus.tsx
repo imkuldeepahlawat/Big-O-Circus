@@ -71,7 +71,7 @@ const BfsAlgorithmCircus: React.FC = () => {
   ): void => {
     const nodeGeometry = new THREE.SphereGeometry(0.5, 32, 32);
     const nodeMaterial = new THREE.MeshBasicMaterial({
-      color: currentVisitedLevel.includes(node.value) ? 0xff0000 : 0x4287f5,
+      color: currentVisitedLevel?.includes(node.value) ? 0xff0000 : 0x4287f5,
     });
     const nodeSphere = new THREE.Mesh(nodeGeometry, nodeMaterial);
 

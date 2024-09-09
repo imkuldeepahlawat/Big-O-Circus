@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import DataStructuresDashboard from './pages/DataStructuresDashboard';
 import BfsAlgorithmCircus from './components/algorithms/BfsAlgorithmCircus';
 import DfsAlgorithmCircus from './components/algorithms/DfsAlgorithmCircus';
+import BubbleSortCircus from './components/algorithms/BubbleSortCircus';
 
 const App = () => {
   useEffect(() => {

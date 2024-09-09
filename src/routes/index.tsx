@@ -7,6 +7,7 @@ import LinkedListDataStructure from '@/components/data-structures/LinkedlistData
 import BinaryTreeDataStructure from '@/components/data-structures/BinaryTreeDataStructure';
 import BfsAlgorithmCircus from '@/components/algorithms/BfsAlgorithmCircus';
 import DfsAlgorithmCircus from '@/components/algorithms/DfsAlgorithmCircus';
+import BubbleSortCircus from '@/components/algorithms/BubbleSortCircus';
 const QueueDataStructure = lazy(
   () => import('../components/data-structures/QueueDataStructure')
 );
@@ -87,6 +88,14 @@ const routes: RouteObject[] = [
     element: (
       <Suspense fallback={<LoadingComponent />}>
         <BfsAlgorithmCircus />
+      </Suspense>
+    ),
+  },
+  {
+    path: '/algo-bubble-sort',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <BubbleSortCircus />
       </Suspense>
     ),
   },

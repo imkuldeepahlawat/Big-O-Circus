@@ -483,11 +483,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 export const algorithmsCompoentLinkList: componentLinkTT[] = [
   // Sorting Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'Bubble Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-bubble-sort',
   },
   {
     color: 'red',
