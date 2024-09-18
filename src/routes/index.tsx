@@ -8,6 +8,7 @@ import BinaryTreeDataStructure from '@/components/data-structures/BinaryTreeData
 import BfsAlgorithmCircus from '@/components/algorithms/BfsAlgorithmCircus';
 import DfsAlgorithmCircus from '@/components/algorithms/DfsAlgorithmCircus';
 import BubbleSortCircus from '@/components/algorithms/BubbleSortCircus';
+import SelectionSortAlgorithmCircus from '@/components/algorithms/SelectionSortAlgorithmCircus';
 const QueueDataStructure = lazy(
   () => import('../components/data-structures/QueueDataStructure')
 );
@@ -100,6 +101,14 @@ const routes: RouteObject[] = [
     ),
   },
   {
+    path: '/algo-selection-sort',
+    element: (
+      <Suspense fallback={<LoadingComponent />}>
+        <SelectionSortAlgorithmCircus />
+      </Suspense>
+    ),
+  },
+  {
     path: '/algo-dfs',
     element: (
       <Suspense fallback={<LoadingComponent />}>
@@ -115,7 +124,6 @@ const routes: RouteObject[] = [
       </Suspense>
     ),
   },
-  // BinaryTreeDataStructure
 ];
 
 const rootRouteList = createBrowserRouter(routes);

@@ -490,11 +490,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-bubble-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Selection Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-selection-sort',
   },
   {
     color: 'red',
