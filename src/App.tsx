@@ -12,7 +12,9 @@ import DataStructuresDashboard from './pages/DataStructuresDashboard';
 import BfsAlgorithmCircus from './components/algorithms/BfsAlgorithmCircus';
 import DfsAlgorithmCircus from './components/algorithms/DfsAlgorithmCircus';
 import BubbleSortCircus from './components/algorithms/BubbleSortCircus';
-import TrieDataStructure from './components/data-structures/TrieDataStructure';
+import BinarySearchCircus from './components/algorithms/BinarySearchCircus';
+import MergeSortCircus from './components/algorithms/MergeSortCircus';
+import InsertionSortCircus from './components/algorithms/InsertionSortCircus';
 
 const App = () => {
   useEffect(() => {
@@ -23,7 +25,7 @@ const App = () => {
   return (
     <RootLayout>
       <Routes>
-        <Route path='/' element={<TrieDataStructure />}></Route>
+        <Route path='/' element={<Home />}></Route>
       </Routes>
     </RootLayout>
   );
