@@ -2,130 +2,127 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import App from '../App';
 import LoadingComponent from '../components/LoadingComponent';
-import ArrayDataStructure from '@/components/data-structures/ArrayDataStructure';
-import LinkedListDataStructure from '@/components/data-structures/LinkedlistDataStructure';
-import BinaryTreeDataStructure from '@/components/data-structures/BinaryTreeDataStructure';
-import BfsAlgorithmCircus from '@/components/algorithms/BfsAlgorithmCircus';
-import DfsAlgorithmCircus from '@/components/algorithms/DfsAlgorithmCircus';
-import BubbleSortCircus from '@/components/algorithms/BubbleSortCircus';
-import SelectionSortAlgorithmCircus from '@/components/algorithms/SelectionSortAlgorithmCircus';
-const QueueDataStructure = lazy(
-  () => import('../components/data-structures/QueueDataStructure')
+import Home from '../pages/Home';
+
+// Data Structures
+const ArrayDataStructure = lazy(
+  () => import('@/components/data-structures/ArrayDataStructure')
+);
+const LinkedListDataStructure = lazy(
+  () => import('@/components/data-structures/LinkedlistDataStructure')
 );
 const StackDataStructure = lazy(
-  () => import('../components/data-structures/StackDataStructure')
+  () => import('@/components/data-structures/StackDataStructure')
+);
+const QueueDataStructure = lazy(
+  () => import('@/components/data-structures/QueueDataStructure')
+);
+const BinaryTreeDataStructure = lazy(
+  () => import('@/components/data-structures/BinaryTreeDataStructure')
 );
 
+// Algorithms
+const BfsAlgorithmCircus = lazy(
+  () => import('@/components/algorithms/BfsAlgorithmCircus')
+);
+const DfsAlgorithmCircus = lazy(
+  () => import('@/components/algorithms/DfsAlgorithmCircus')
+);
+const BubbleSortCircus = lazy(
+  () => import('@/components/algorithms/BubbleSortCircus')
+);
+const SelectionSortAlgorithmCircus = lazy(
+  () => import('@/components/algorithms/SelectionSortAlgorithmCircus')
+);
+
+// Pages
 const DataStructuresDashboard = lazy(
   () => import('../pages/DataStructuresDashboard')
 );
 const AlgorithmsDashboard = lazy(() => import('../pages/AlgorithmsDashboard'));
 
+// Wrap component with Suspense
+const withSuspense = (Component: React.ComponentType) => (
+  <Suspense fallback={<LoadingComponent />}>
+    <Component />
+  </Suspense>
+);
+
 const routes: RouteObject[] = [
   {
     path: '/',
     element: <App />,
-  },
-  ,
-  {
-    path: '/data-structure',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <DataStructuresDashboard />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/algorithms',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <AlgorithmsDashboard />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/ds-array',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <ArrayDataStructure />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/ds-stack',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <StackDataStructure />
-      </Suspense>
-    ),
-  },
-  // ArrayDataStructure
-  {
-    path: '/ds-queue',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <QueueDataStructure />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/ds-linklist',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <LinkedListDataStructure />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/ds-binarytree',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <BinaryTreeDataStructure />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/algo-bfs',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <BfsAlgorithmCircus />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/algo-bubble-sort',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <BubbleSortCircus />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/algo-selection-sort',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <SelectionSortAlgorithmCircus />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/algo-dfs',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <DfsAlgorithmCircus />
-      </Suspense>
-    ),
-  },
-  {
-    path: '/ds-binary-tree',
-    element: (
-      <Suspense fallback={<LoadingComponent />}>
-        <BinaryTreeDataStructure />
-      </Suspense>
-    ),
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      // Data Structures routes
+      {
+        path: 'datastructure',
+        element: withSuspense(DataStructuresDashboard),
+      },
+      {
+        path: 'ds-array',
+        element: withSuspense(ArrayDataStructure),
+      },
+      {
+        path: 'ds-stack',
+        element: withSuspense(StackDataStructure),
+      },
+      {
+        path: 'ds-queue',
+        element: withSuspense(QueueDataStructure),
+      },
+      {
+        path: 'ds-linklist',
+        element: withSuspense(LinkedListDataStructure),
+      },
+      {
+        path: 'ds-binary-tree',
+        element: withSuspense(BinaryTreeDataStructure),
+      },
+
+      // Algorithms routes
+      {
+        path: 'algorithms',
+        element: withSuspense(AlgorithmsDashboard),
+      },
+      {
+        path: 'algo-bfs',
+        element: withSuspense(BfsAlgorithmCircus),
+      },
+      {
+        path: 'algo-dfs',
+        element: withSuspense(DfsAlgorithmCircus),
+      },
+      {
+        path: 'algo-bubble-sort',
+        element: withSuspense(BubbleSortCircus),
+      },
+      {
+        path: 'algo-selection-sort',
+        element: withSuspense(SelectionSortAlgorithmCircus),
+      },
+
+      // Catch-all route for 404
+      {
+        path: '*',
+        element: (
+          <div className='flex h-full w-full items-center justify-center'>
+            <div className='text-center'>
+              <h2 className='text-2xl font-bold mb-4'>Page Not Found</h2>
+              <p>
+                The page you're looking for doesn't exist or has been moved.
+              </p>
+            </div>
+          </div>
+        ),
+      },
+    ],
   },
 ];
 
-const rootRouteList = createBrowserRouter(routes);
+const router = createBrowserRouter(routes);
 
-export default rootRouteList;
+export default router;

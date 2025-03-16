@@ -1,0 +1,358 @@
+/* Global styles for Big-O-Circus */
+
+/* Smooth scrolling for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    opacity 300ms,
+    transform 300ms;
+}
+
+/* ===== DATA STRUCTURE ANIMATIONS ===== */
+
+/* Array Animation */
+.array-pattern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+}
+
+.array-element {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 2px;
+  animation: pulse 2s infinite;
+}
+
+/* Linked List Animation */
+.linked-list-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.linked-list-node {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse 2s infinite;
+}
+
+.linked-list-arrow {
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: fadeIn 2s infinite;
+}
+
+/* Stack Animation */
+.stack-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.stack-element {
+  position: absolute;
+  width: 60%;
+  height: 15%;
+  left: 20%;
+  background-color: white;
+  border-radius: 2px;
+  animation: stackPush 3s infinite;
+}
+
+@keyframes stackPush {
+  0%,
+  100% {
+    transform: translateY(10px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Queue Animation */
+.queue-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+}
+
+.queue-element {
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  top: 35%;
+  background-color: white;
+  border-radius: 2px;
+  animation: queueMove 4s infinite;
+}
+
+@keyframes queueMove {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20px);
+    opacity: 0.3;
+  }
+}
+
+/* Tree Animation */
+.tree-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.tree-node {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+.tree-node.root {
+  width: 20px;
+  height: 20px;
+}
+
+.tree-edge {
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  transform-origin: left center;
+  animation: fadeIn 2s infinite;
+}
+
+/* Graph Animation */
+.graph-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.graph-node {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+}
+
+.graph-edge {
+  position: absolute;
+  height: 2px;
+  background-color: white;
+  transform-origin: left center;
+  animation: fadeIn 2s infinite;
+}
+
+/* ===== ALGORITHM ANIMATIONS ===== */
+
+/* Sorting Animation */
+.sorting-bars {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  gap: 4px;
+  padding: 10px;
+}
+
+.sorting-bar {
+  width: 8%;
+  background-color: white;
+  animation: sortingMove 3s infinite;
+}
+
+@keyframes sortingMove {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Searching Animation */
+.search-pattern {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+  padding: 10px;
+}
+
+.search-element {
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 2px;
+  animation: searchHighlight 2s infinite;
+}
+
+@keyframes searchHighlight {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Graph Algorithm Animation */
+.graph-pattern {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.graph-node {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  animation: nodeVisit 3s infinite;
+}
+
+@keyframes nodeVisit {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Common Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Category animations */
+.algorithm-category,
+.data-structure-category {
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover effects */
+.card-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  transition: box-shadow 0.3s ease;
+}
