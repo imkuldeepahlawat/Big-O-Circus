@@ -48,7 +48,7 @@ const Home = () => {
   const algoGrouped = groupByCategory(algorithmsCompoentLinkList);
 
   return (
-    <div className='w-full min-h-full'>
+    <div className='w-full'>
       {/* Hero Section */}
       <section className='relative overflow-hidden py-20 px-4 bg-gradient-to-b from-gray-50 to-white'>
         <div className='absolute inset-0 overflow-hidden'>

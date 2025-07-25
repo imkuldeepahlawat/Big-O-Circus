@@ -125,7 +125,7 @@ const AlgorithmsDashboard = () => {
   const groupedAlgorithms = groupByCategory(algorithmsCompoentLinkList);
 
   return (
-    <div className='w-full px-4 py-6 bg-gradient-to-b from-blue-50 to-blue-100 text-gray-800 min-h-full'>
+    <div className='w-full px-4 py-6 text-gray-800'>
       <div className='max-w-7xl mx-auto'>
         <div className='mb-10'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600'>
