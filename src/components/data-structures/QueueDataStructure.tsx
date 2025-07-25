@@ -81,7 +81,7 @@ const QueueDataStructure: React.FC = () => {
   };
 
   return (
-    <div className='relative w-full h-full overflow-hidden'>
+    <div className='relative w-full h-screen overflow-hidden'>
       <canvas ref={queueDsCircusDomElementRef} className='w-full h-full' />
       <div className='absolute top-4 left-4 bg-white bg-opacity-75 p-4 rounded shadow'>
         <h3 className='text-lg font-bold mb-2'>Queue Information</h3>

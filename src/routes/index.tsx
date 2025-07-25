@@ -2,7 +2,6 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 import App from '../App';
 import LoadingComponent from '../components/LoadingComponent';
-import Home from '../pages/Home';
 
 // Data Structures
 const ArrayDataStructure = lazy(
@@ -36,6 +35,7 @@ const SelectionSortAlgorithmCircus = lazy(
 );
 
 // Pages
+const Home = lazy(() => import('../pages/Home'));
 const DataStructuresDashboard = lazy(
   () => import('../pages/DataStructuresDashboard')
 );
@@ -55,7 +55,7 @@ const routes: RouteObject[] = [
     children: [
       {
         index: true,
-        element: <Home />,
+        element: withSuspense(Home),
       },
       // Data Structures routes
       {

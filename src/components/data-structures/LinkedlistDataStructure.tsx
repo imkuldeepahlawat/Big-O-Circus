@@ -1,7 +1,6 @@
 import { Algorithm3DPreviewer } from '@/lib/algorithm3DPreviewer';
 import React, { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
-import RootLayout from '../RootLayout';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import {
@@ -158,39 +157,38 @@ const LinkedListDataStructure: React.FC<Props> = () => {
   };
 
   return (
-    <RootLayout>
-      <div className='relative w-full h-[400px]'>
-        <canvas ref={linkedListDomElementRef} className='w-full h-full' />
-        <div className='absolute top-4 left-4 text-white   p-4 rounded shadow '>
-          <h3 className='text-lg font-bold mb-2'>Linked List Information</h3>
-          <p>Size: {linkedList.length}</p>
-          <p>Head: {linkedList.length > 0 ? linkedList[0] : 'N/A'}</p>
-          <p>
-            Tail:{' '}
-            {linkedList.length > 0 ? linkedList[linkedList.length - 1] : 'N/A'}
-          </p>
-          <div className='flex flex-col gap-2'>
-            <div className='mt-2'></div>
-          </div>
-          <Accordion type='single' collapsible className='w-full'>
-            <AccordionItem value='item-1'>
-              <AccordionTrigger>CRUD</AccordionTrigger>
-              <AccordionContent>
-                <Button
-                  onClick={addToLinkedList}
-                  className='bg-blue-500 text-white px-4 py-2 rounded mr-2 capitalize'
-                >
-                  {linkedList.length ? 'Add Node on tail' : 'Add head node'}
-                </Button>
-                <Button
-                  onClick={removeFromLinkedList}
-                  className='bg-red-500 text-white px-4 py-2 rounded'
-                >
-                  Remove Node from tail
-                </Button>
-              </AccordionContent>
-            </AccordionItem>
-            {/* <AccordionItem value='item-2'>
+    <div className='relative w-full h-screen'>
+      <canvas ref={linkedListDomElementRef} className='w-full h-full' />
+      <div className='absolute top-4 left-4 text-white   p-4 rounded shadow '>
+        <h3 className='text-lg font-bold mb-2'>Linked List Information</h3>
+        <p>Size: {linkedList.length}</p>
+        <p>Head: {linkedList.length > 0 ? linkedList[0] : 'N/A'}</p>
+        <p>
+          Tail:{' '}
+          {linkedList.length > 0 ? linkedList[linkedList.length - 1] : 'N/A'}
+        </p>
+        <div className='flex flex-col gap-2'>
+          <div className='mt-2'></div>
+        </div>
+        <Accordion type='single' collapsible className='w-full'>
+          <AccordionItem value='item-1'>
+            <AccordionTrigger>CRUD</AccordionTrigger>
+            <AccordionContent>
+              <Button
+                onClick={addToLinkedList}
+                className='bg-blue-500 text-white px-4 py-2 rounded mr-2 capitalize'
+              >
+                {linkedList.length ? 'Add Node on tail' : 'Add head node'}
+              </Button>
+              <Button
+                onClick={removeFromLinkedList}
+                className='bg-red-500 text-white px-4 py-2 rounded'
+              >
+                Remove Node from tail
+              </Button>
+            </AccordionContent>
+          </AccordionItem>
+          {/* <AccordionItem value='item-2'>
               <AccordionTrigger>Custom CRUD</AccordionTrigger>
               <AccordionContent>
                 <div className='mt-2 flex  items-center gap-2'>
@@ -205,33 +203,32 @@ const LinkedListDataStructure: React.FC<Props> = () => {
                 </div>
               </AccordionContent>
             </AccordionItem> */}
-            <AccordionItem value='item-3'>
-              <AccordionTrigger>Manipulation</AccordionTrigger>
-              <AccordionContent>
-                <div className='mt-2 flex  items-center gap-2'>
-                  <Button
-                    onClick={reverseLinkList}
-                    className=' border px-4 py-2 rounded'
-                  >
-                    Reverse Linklist
-                  </Button>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-        <div className='absolute top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
-          <h3 className='text-lg font-bold mb-2'>
-            About Linked List Data Structure
-          </h3>
-          <p>
-            A linked list is a linear data structure where elements are stored
-            in nodes. Each node points to the next node in the sequence. (i Know
-            a person who know a person)
-          </p>
-        </div>
+          <AccordionItem value='item-3'>
+            <AccordionTrigger>Manipulation</AccordionTrigger>
+            <AccordionContent>
+              <div className='mt-2 flex  items-center gap-2'>
+                <Button
+                  onClick={reverseLinkList}
+                  className=' border px-4 py-2 rounded'
+                >
+                  Reverse Linklist
+                </Button>
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
-    </RootLayout>
+      <div className='absolute top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
+        <h3 className='text-lg font-bold mb-2'>
+          About Linked List Data Structure
+        </h3>
+        <p>
+          A linked list is a linear data structure where elements are stored in
+          nodes. Each node points to the next node in the sequence. (i Know a
+          person who know a person)
+        </p>
+      </div>
+    </div>
   );
 };
 

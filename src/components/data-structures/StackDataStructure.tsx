@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Algorithm3DPreviewer } from '../../lib/algorithm3DPreviewer';
 import * as THREE from 'three';
-import RootLayout from '../RootLayout';
 
 const StackDataStructure: React.FC = () => {
   const stackDsCircusDomElementRef = useRef<HTMLCanvasElement | null>(null);
@@ -82,47 +81,43 @@ const StackDataStructure: React.FC = () => {
   };
 
   return (
-    <RootLayout>
-      <div className='relative w-full h-[400px]'>
-        <canvas ref={stackDsCircusDomElementRef} className='w-full h-full' />
-        <div className='absolute top-4 left-4 bg-white bg-opacity-75 p-4 rounded shadow'>
-          <h3 className='text-lg font-bold mb-2'>Stack Information</h3>
-          <p>Size: {stack.length}</p>
-          <p>
-            Top element: {stack.length > 0 ? stack[stack.length - 1] : 'N/A'}
-          </p>
-          <p>Bottom element: {stack.length > 0 ? stack[0] : 'N/A'}</p>
-          <div className='mt-2'>
-            <button
-              onClick={pushToStack}
-              className='bg-blue-500 text-white px-4 py-2 rounded mr-2'
-            >
-              Push
-            </button>
-            <button
-              onClick={popFromStack}
-              className='bg-red-500 text-white px-4 py-2 rounded'
-            >
-              Pop
-            </button>
-          </div>
-        </div>
-        <div className='absolute top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
-          <h3 className='text-lg font-bold mb-2'>About Stack Data Structure</h3>
-          <p className='capitalize'>
-            A stack is a linear data structure that follows the
-            Last-In-First-Out (LIFO) principle.
-            <a
-              href='https://upload.wikimedia.org/wikipedia/commons/1/19/Tallrik_-_Ystad-2018.jpg'
-              target='_blank'
-              className='text-blue-600 underline'
-            >
-              Ref
-            </a>
-          </p>
+    <div className='relative w-full h-screen'>
+      <canvas ref={stackDsCircusDomElementRef} className='w-full h-full' />
+      <div className='absolute top-4 left-4 bg-white bg-opacity-75 p-4 rounded shadow'>
+        <h3 className='text-lg font-bold mb-2'>Stack Information</h3>
+        <p>Size: {stack.length}</p>
+        <p>Top element: {stack.length > 0 ? stack[stack.length - 1] : 'N/A'}</p>
+        <p>Bottom element: {stack.length > 0 ? stack[0] : 'N/A'}</p>
+        <div className='mt-2'>
+          <button
+            onClick={pushToStack}
+            className='bg-blue-500 text-white px-4 py-2 rounded mr-2'
+          >
+            Push
+          </button>
+          <button
+            onClick={popFromStack}
+            className='bg-red-500 text-white px-4 py-2 rounded'
+          >
+            Pop
+          </button>
         </div>
       </div>
-    </RootLayout>
+      <div className='absolute top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
+        <h3 className='text-lg font-bold mb-2'>About Stack Data Structure</h3>
+        <p className='capitalize'>
+          A stack is a linear data structure that follows the Last-In-First-Out
+          (LIFO) principle.
+          <a
+            href='https://upload.wikimedia.org/wikipedia/commons/1/19/Tallrik_-_Ystad-2018.jpg'
+            target='_blank'
+            className='text-blue-600 underline'
+          >
+            Ref
+          </a>
+        </p>
+      </div>
+    </div>
   );
 };
 

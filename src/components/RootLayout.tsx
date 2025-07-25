@@ -101,7 +101,7 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
         </div>
       </header>
 
-      <main className='flex-1'>{children}</main>
+      <main className='flex-1 overflow-hidden'>{children}</main>
 
       <footer className='w-full py-6 px-4 bg-white shadow-inner border-t border-gray-200'>
         <div className='max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6'>

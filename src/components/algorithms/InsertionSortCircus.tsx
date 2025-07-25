@@ -141,7 +141,7 @@ const InsertionSortCircus: React.FC = () => {
   };
 
   return (
-    <div className='relative w-full h-full overflow-hidden'>
+    <div className='relative w-full h-screen overflow-hidden'>
       <canvas ref={canvasRef} className='w-full h-full' />
       <div className='absolute top-4 left-4 bg-white bg-opacity-75 p-4 rounded shadow'>
         <h2 className='text-2xl font-bold mb-4'>Insertion Sort</h2>

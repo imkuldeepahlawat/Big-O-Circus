@@ -1,7 +1,6 @@
 import { Algorithm3DPreviewer } from '@/lib/algorithm3DPreviewer';
 import React, { useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
-import RootLayout from '../RootLayout';
 import { Button } from '@/components/ui/button';
 import {
   Accordion,
@@ -582,213 +581,211 @@ const KDTreeDataStructure: React.FC = () => {
   };
 
   return (
-    <RootLayout>
-      <div className='relative w-full h-[400px]'>
-        <canvas ref={kdTreeDomElementRef} className='w-full h-full' />
-        <div className='absolute top-4 left-4 text-white p-4 rounded shadow'>
-          <h3 className='text-lg font-bold mb-2'>KD-Tree Information</h3>
-          <p>Number of Points: {points.length}</p>
+    <div className='relative w-full h-screen'>
+      <canvas ref={kdTreeDomElementRef} className='w-full h-full' />
+      <div className='absolute top-4 left-4 text-white p-4 rounded shadow'>
+        <h3 className='text-lg font-bold mb-2'>KD-Tree Information</h3>
+        <p>Number of Points: {points.length}</p>
 
-          {searchState.nearestNode && searchState.searchPoint && (
-            <div className='mt-2'>
-              <div className='flex justify-between items-center'>
-                <h4 className='font-bold'>Nearest Neighbor Search</h4>
-                <Button
-                  onClick={resetSearch}
-                  className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
-                >
-                  Reset
-                </Button>
-              </div>
-              <p>Distance: {searchState.nearestDistance.toFixed(2)}</p>
-              <p>
-                Search Point: ({searchState.searchPoint.x.toFixed(2)},
-                {searchState.searchPoint.y.toFixed(2)},
-                {searchState.searchPoint.z.toFixed(2)})
-              </p>
-              <p>
-                Nearest Point: ({searchState.nearestNode.point.x.toFixed(2)},
-                {searchState.nearestNode.point.y.toFixed(2)},
-                {searchState.nearestNode.point.z.toFixed(2)})
-              </p>
+        {searchState.nearestNode && searchState.searchPoint && (
+          <div className='mt-2'>
+            <div className='flex justify-between items-center'>
+              <h4 className='font-bold'>Nearest Neighbor Search</h4>
+              <Button
+                onClick={resetSearch}
+                className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
+              >
+                Reset
+              </Button>
             </div>
-          )}
-
-          {rangeState.pointsInRange.length > 0 && (
-            <div className='mt-2'>
-              <div className='flex justify-between items-center'>
-                <h4 className='font-bold'>Range Search</h4>
-                <Button
-                  onClick={resetRange}
-                  className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
-                >
-                  Reset
-                </Button>
-              </div>
-              <p>Points in Range: {rangeState.pointsInRange.length}</p>
-            </div>
-          )}
-
-          {collisionState.collidingPoints.length > 0 && (
-            <div className='mt-2'>
-              <div className='flex justify-between items-center'>
-                <h4 className='font-bold'>Collision Detection</h4>
-                <Button
-                  onClick={resetCollisions}
-                  className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
-                >
-                  Reset
-                </Button>
-              </div>
-              <p>Colliding Points: {collisionState.collidingPoints.length}</p>
-              <p>Collision Radius: {collisionState.radius}</p>
-            </div>
-          )}
-
-          {spatialQueryState.pointsInRegion.length > 0 && (
-            <div className='mt-2'>
-              <div className='flex justify-between items-center'>
-                <h4 className='font-bold'>Spatial Query</h4>
-                <Button
-                  onClick={resetSpatialQuery}
-                  className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
-                >
-                  Reset
-                </Button>
-              </div>
-              <p>Points in Region: {spatialQueryState.pointsInRegion.length}</p>
-              <p>Query Radius: {spatialQueryState.queryRegion.radius}</p>
-            </div>
-          )}
-
-          <div className='flex flex-col gap-2 mt-4'>
-            <Accordion type='single' collapsible className='w-full'>
-              <AccordionItem value='item-1'>
-                <AccordionTrigger>Basic Operations</AccordionTrigger>
-                <AccordionContent>
-                  <div className='flex flex-col gap-2'>
-                    <Button
-                      onClick={addRandomPoint}
-                      className='bg-blue-500 text-white px-4 py-2 rounded'
-                    >
-                      Add Random Point
-                    </Button>
-                    <Button
-                      onClick={clearTree}
-                      className='bg-red-500 text-white px-4 py-2 rounded'
-                    >
-                      Clear Tree
-                    </Button>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value='item-2'>
-                <AccordionTrigger>Search Operations</AccordionTrigger>
-                <AccordionContent>
-                  <div className='flex flex-col gap-2'>
-                    <Button
-                      onClick={addSearchPoint}
-                      className='bg-purple-500 text-white px-4 py-2 rounded'
-                    >
-                      Find Nearest Neighbor
-                    </Button>
-                    <Button
-                      onClick={rangeSearch}
-                      className='bg-cyan-500 text-white px-4 py-2 rounded'
-                    >
-                      Range Search
-                    </Button>
-                    <div className='flex gap-2'>
-                      <Button
-                        onClick={resetSearch}
-                        className='bg-gray-500 text-white px-4 py-2 rounded'
-                        disabled={!searchState.searchPoint}
-                      >
-                        Reset Search
-                      </Button>
-                      <Button
-                        onClick={resetRange}
-                        className='bg-gray-500 text-white px-4 py-2 rounded'
-                        disabled={rangeState.pointsInRange.length === 0}
-                      >
-                        Reset Range
-                      </Button>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value='item-3'>
-                <AccordionTrigger>Advanced Operations</AccordionTrigger>
-                <AccordionContent>
-                  <div className='flex flex-col gap-2'>
-                    <Button
-                      onClick={balanceTree}
-                      className='bg-yellow-500 text-white px-4 py-2 rounded'
-                    >
-                      Balance Tree
-                    </Button>
-                    <Button
-                      onClick={() => deletePoint(points[points.length - 1])}
-                      className='bg-red-500 text-white px-4 py-2 rounded'
-                      disabled={points.length === 0}
-                    >
-                      Delete Last Point
-                    </Button>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value='item-4'>
-                <AccordionTrigger>Advanced Queries</AccordionTrigger>
-                <AccordionContent>
-                  <div className='flex flex-col gap-2'>
-                    <Button
-                      onClick={detectCollisions}
-                      className='bg-red-500 text-white px-4 py-2 rounded'
-                    >
-                      Detect Collisions
-                    </Button>
-                    <Button
-                      onClick={() => spatialQuery({ x: 0, y: 0, z: 0 }, 2)}
-                      className='bg-green-500 text-white px-4 py-2 rounded'
-                    >
-                      Spatial Query
-                    </Button>
-                    <div className='flex gap-2'>
-                      <Button
-                        onClick={resetCollisions}
-                        className='bg-gray-500 text-white px-4 py-2 rounded'
-                        disabled={collisionState.collidingPoints.length === 0}
-                      >
-                        Reset Collisions
-                      </Button>
-                      <Button
-                        onClick={resetSpatialQuery}
-                        className='bg-gray-500 text-white px-4 py-2 rounded'
-                        disabled={spatialQueryState.pointsInRegion.length === 0}
-                      >
-                        Reset Spatial
-                      </Button>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+            <p>Distance: {searchState.nearestDistance.toFixed(2)}</p>
+            <p>
+              Search Point: ({searchState.searchPoint.x.toFixed(2)},
+              {searchState.searchPoint.y.toFixed(2)},
+              {searchState.searchPoint.z.toFixed(2)})
+            </p>
+            <p>
+              Nearest Point: ({searchState.nearestNode.point.x.toFixed(2)},
+              {searchState.nearestNode.point.y.toFixed(2)},
+              {searchState.nearestNode.point.z.toFixed(2)})
+            </p>
           </div>
-        </div>
-        <div className='absolute w-[500px] top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
-          <h3 className='text-lg font-bold mb-2'>About KD-Tree</h3>
-          <p>
-            A KD-tree is a space-partitioning data structure for organizing
-            points in a k-dimensional space. Each level of the tree splits
-            points along a different dimension, cycling through the dimensions
-            as the tree grows deeper.
-          </p>
+        )}
+
+        {rangeState.pointsInRange.length > 0 && (
+          <div className='mt-2'>
+            <div className='flex justify-between items-center'>
+              <h4 className='font-bold'>Range Search</h4>
+              <Button
+                onClick={resetRange}
+                className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
+              >
+                Reset
+              </Button>
+            </div>
+            <p>Points in Range: {rangeState.pointsInRange.length}</p>
+          </div>
+        )}
+
+        {collisionState.collidingPoints.length > 0 && (
+          <div className='mt-2'>
+            <div className='flex justify-between items-center'>
+              <h4 className='font-bold'>Collision Detection</h4>
+              <Button
+                onClick={resetCollisions}
+                className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
+              >
+                Reset
+              </Button>
+            </div>
+            <p>Colliding Points: {collisionState.collidingPoints.length}</p>
+            <p>Collision Radius: {collisionState.radius}</p>
+          </div>
+        )}
+
+        {spatialQueryState.pointsInRegion.length > 0 && (
+          <div className='mt-2'>
+            <div className='flex justify-between items-center'>
+              <h4 className='font-bold'>Spatial Query</h4>
+              <Button
+                onClick={resetSpatialQuery}
+                className='bg-gray-500 text-white px-2 py-1 rounded text-sm'
+              >
+                Reset
+              </Button>
+            </div>
+            <p>Points in Region: {spatialQueryState.pointsInRegion.length}</p>
+            <p>Query Radius: {spatialQueryState.queryRegion.radius}</p>
+          </div>
+        )}
+
+        <div className='flex flex-col gap-2 mt-4'>
+          <Accordion type='single' collapsible className='w-full'>
+            <AccordionItem value='item-1'>
+              <AccordionTrigger>Basic Operations</AccordionTrigger>
+              <AccordionContent>
+                <div className='flex flex-col gap-2'>
+                  <Button
+                    onClick={addRandomPoint}
+                    className='bg-blue-500 text-white px-4 py-2 rounded'
+                  >
+                    Add Random Point
+                  </Button>
+                  <Button
+                    onClick={clearTree}
+                    className='bg-red-500 text-white px-4 py-2 rounded'
+                  >
+                    Clear Tree
+                  </Button>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-2'>
+              <AccordionTrigger>Search Operations</AccordionTrigger>
+              <AccordionContent>
+                <div className='flex flex-col gap-2'>
+                  <Button
+                    onClick={addSearchPoint}
+                    className='bg-purple-500 text-white px-4 py-2 rounded'
+                  >
+                    Find Nearest Neighbor
+                  </Button>
+                  <Button
+                    onClick={rangeSearch}
+                    className='bg-cyan-500 text-white px-4 py-2 rounded'
+                  >
+                    Range Search
+                  </Button>
+                  <div className='flex gap-2'>
+                    <Button
+                      onClick={resetSearch}
+                      className='bg-gray-500 text-white px-4 py-2 rounded'
+                      disabled={!searchState.searchPoint}
+                    >
+                      Reset Search
+                    </Button>
+                    <Button
+                      onClick={resetRange}
+                      className='bg-gray-500 text-white px-4 py-2 rounded'
+                      disabled={rangeState.pointsInRange.length === 0}
+                    >
+                      Reset Range
+                    </Button>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-3'>
+              <AccordionTrigger>Advanced Operations</AccordionTrigger>
+              <AccordionContent>
+                <div className='flex flex-col gap-2'>
+                  <Button
+                    onClick={balanceTree}
+                    className='bg-yellow-500 text-white px-4 py-2 rounded'
+                  >
+                    Balance Tree
+                  </Button>
+                  <Button
+                    onClick={() => deletePoint(points[points.length - 1])}
+                    className='bg-red-500 text-white px-4 py-2 rounded'
+                    disabled={points.length === 0}
+                  >
+                    Delete Last Point
+                  </Button>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value='item-4'>
+              <AccordionTrigger>Advanced Queries</AccordionTrigger>
+              <AccordionContent>
+                <div className='flex flex-col gap-2'>
+                  <Button
+                    onClick={detectCollisions}
+                    className='bg-red-500 text-white px-4 py-2 rounded'
+                  >
+                    Detect Collisions
+                  </Button>
+                  <Button
+                    onClick={() => spatialQuery({ x: 0, y: 0, z: 0 }, 2)}
+                    className='bg-green-500 text-white px-4 py-2 rounded'
+                  >
+                    Spatial Query
+                  </Button>
+                  <div className='flex gap-2'>
+                    <Button
+                      onClick={resetCollisions}
+                      className='bg-gray-500 text-white px-4 py-2 rounded'
+                      disabled={collisionState.collidingPoints.length === 0}
+                    >
+                      Reset Collisions
+                    </Button>
+                    <Button
+                      onClick={resetSpatialQuery}
+                      className='bg-gray-500 text-white px-4 py-2 rounded'
+                      disabled={spatialQueryState.pointsInRegion.length === 0}
+                    >
+                      Reset Spatial
+                    </Button>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
-    </RootLayout>
+      <div className='absolute w-[500px] top-4 right-4 bg-white bg-opacity-75 p-4 rounded shadow'>
+        <h3 className='text-lg font-bold mb-2'>About KD-Tree</h3>
+        <p>
+          A KD-tree is a space-partitioning data structure for organizing points
+          in a k-dimensional space. Each level of the tree splits points along a
+          different dimension, cycling through the dimensions as the tree grows
+          deeper.
+        </p>
+      </div>
+    </div>
   );
 };
 
