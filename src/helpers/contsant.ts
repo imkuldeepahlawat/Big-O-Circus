@@ -525,11 +525,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-heap-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Radix Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-radix-sort',
   },
   {
     color: 'green',

@@ -67,6 +67,9 @@ const HeapSortCircus = lazy(
 const CountingSortCircus = lazy(
   () => import('@/components/algorithms/CountingSortCircus')
 );
+const RadixSortCircus = lazy(
+  () => import('@/components/algorithms/RadixSortCircus')
+);
 const BinarySearchCircus = lazy(
   () => import('@/components/algorithms/BinarySearchCircus')
 );
@@ -186,6 +189,10 @@ const routes: RouteObject[] = [
       {
         path: 'algo-counting-sort',
         element: withSuspense(CountingSortCircus),
+      },
+      {
+        path: 'algo-radix-sort',
+        element: withSuspense(RadixSortCircus),
       },
       {
         path: 'algo-binary-search',
