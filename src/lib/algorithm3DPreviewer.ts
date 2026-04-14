@@ -13,8 +13,8 @@ export class Algorithm3DPreviewer {
   public renderer: THREE.WebGLRenderer;
   public scene: THREE.Scene;
   public controls: OrbitControls;
-  public cube: THREE.Mesh;
   public renderEnable: Boolean = true;
+  private animationFrameId: number = 0;
 
   /**
    * Constructor for Algorithm3DPreviewer
@@ -37,11 +37,23 @@ export class Algorithm3DPreviewer {
     this.camera.position.z = 5;
 
     // Set up the renderer
-    this.renderer = new THREE.WebGLRenderer({ canvas: viewerElement });
+    this.renderer = new THREE.WebGLRenderer({
+      canvas: viewerElement,
+      antialias: true,
+    });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
 
     // Create the scene
     this.scene = new THREE.Scene();
+
+    // Add default lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    this.scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 10, 7);
+    this.scene.add(directionalLight);
 
     // Set up orbit controls
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
@@ -58,13 +70,6 @@ export class Algorithm3DPreviewer {
     if (viewerElement) {
       viewerElement.parentElement?.appendChild(this.stats.dom);
     }
-
-    // Create a cube and add it to the scene
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    this.cube = new THREE.Mesh(geometry, material);
-    this.cube.visible = false;
-    this.scene.add(this.cube);
 
     // Bind methods to this instance
     this.animate = this.animate.bind(this);
@@ -103,13 +108,9 @@ export class Algorithm3DPreviewer {
    * Animation loop
    */
   animate(): void {
-    requestAnimationFrame(this.animate);
+    this.animationFrameId = requestAnimationFrame(this.animate);
 
     this.stats.update();
-
-    // Rotate the test cube
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.01;
 
     if (this.renderEnable) {
       this.renderEnable = false;
@@ -119,13 +120,79 @@ export class Algorithm3DPreviewer {
   }
 
   /**
-   * Clean up resources
+   * Dispose all children from the scene (geometries, materials, textures)
+   */
+  disposeSceneChildren(): void {
+    while (this.scene.children.length > 0) {
+      const child = this.scene.children[0];
+      this.disposeObject(child);
+      this.scene.remove(child);
+    }
+
+    // Re-add lighting after clearing
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    this.scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 10, 7);
+    this.scene.add(directionalLight);
+  }
+
+  /**
+   * Recursively dispose a Three.js object and its children
+   */
+  private disposeObject(obj: THREE.Object3D): void {
+    if (obj.children) {
+      for (let i = obj.children.length - 1; i >= 0; i--) {
+        this.disposeObject(obj.children[i]);
+      }
+    }
+
+    if (obj instanceof THREE.Mesh) {
+      if (obj.geometry) obj.geometry.dispose();
+      if (obj.material) {
+        if (Array.isArray(obj.material)) {
+          obj.material.forEach((mat) => {
+            this.disposeMaterial(mat);
+          });
+        } else {
+          this.disposeMaterial(obj.material);
+        }
+      }
+    }
+
+    if (obj instanceof THREE.Line) {
+      if (obj.geometry) obj.geometry.dispose();
+      if (obj.material) {
+        if (Array.isArray(obj.material)) {
+          obj.material.forEach((mat) => this.disposeMaterial(mat));
+        } else {
+          this.disposeMaterial(obj.material);
+        }
+      }
+    }
+  }
+
+  /**
+   * Dispose a material and its textures
+   */
+  private disposeMaterial(material: THREE.Material): void {
+    if ((material as THREE.MeshStandardMaterial).map) {
+      (material as THREE.MeshStandardMaterial).map?.dispose();
+    }
+    material.dispose();
+  }
+
+  /**
+   * Clean up all resources
    */
   disposeCircus(): void {
-    this.scene.remove(this.cube);
-    this.cube.geometry.dispose();
-    (this.cube.material as THREE.Material).dispose();
+    cancelAnimationFrame(this.animationFrameId);
+    this.disposeSceneChildren();
+    this.controls.dispose();
     this.renderer.dispose();
     window.removeEventListener('resize', this.onWindowResize);
+    if (this.stats.dom.parentElement) {
+      this.stats.dom.parentElement.removeChild(this.stats.dom);
+    }
   }
 }
