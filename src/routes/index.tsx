@@ -73,6 +73,9 @@ const BinarySearchCircus = lazy(
 const LinearSearchCircus = lazy(
   () => import('@/components/algorithms/LinearSearchCircus')
 );
+const DijkstraAlgorithm = lazy(
+  () => import('@/components/algorithms/DijkstraAlgorithm')
+);
 
 // Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -191,6 +194,10 @@ const routes: RouteObject[] = [
       {
         path: 'algo-linear-search',
         element: withSuspense(LinearSearchCircus),
+      },
+      {
+        path: 'algo-dijkstra',
+        element: withSuspense(DijkstraAlgorithm),
       },
 
       // Catch-all route for 404
