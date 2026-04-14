@@ -89,11 +89,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-segment-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Fenwick Tree',
     path: '',
     tooltip: 'Binary Indexed Tree',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-fenwick-tree',
   },
 
   // Heaps
@@ -869,11 +869,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'ds-trie',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Fenwick Tree',
     path: '',
     tooltip: 'Binary Indexed Tree',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-fenwick-tree',
   },
   {
     color: 'green',

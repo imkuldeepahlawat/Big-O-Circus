@@ -51,6 +51,9 @@ const GraphDataStructure = lazy(
 const SegmentTreeDataStructure = lazy(
   () => import('@/components/data-structures/SegmentTreeDataStructure')
 );
+const FenwickTreeDataStructure = lazy(
+  () => import('@/components/data-structures/FenwickTreeDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -185,6 +188,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-segment-tree',
         element: withSuspense(SegmentTreeDataStructure),
+      },
+      {
+        path: 'ds-fenwick-tree',
+        element: withSuspense(FenwickTreeDataStructure),
       },
 
       // Algorithms routes
