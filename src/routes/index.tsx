@@ -20,6 +20,10 @@ const BinaryTreeDataStructure = lazy(
   () => import('@/components/data-structures/BinaryTreeDataStructure')
 );
 
+const BinarySearchTree = lazy(
+  () => import('@/components/data-structures/BinarySearchTree')
+);
+
 // More Data Structures
 const KDTreeDataStructure = lazy(
   () => import('@/components/data-structures/KDTreeDataStructure')
@@ -110,6 +114,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-binary-tree',
         element: withSuspense(BinaryTreeDataStructure),
+      },
+      {
+        path: 'ds-bst',
+        element: withSuspense(BinarySearchTree),
       },
       {
         path: 'ds-kd-tree',
