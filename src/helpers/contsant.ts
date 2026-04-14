@@ -98,11 +98,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Heaps
   {
-    color: 'red',
+    color: 'green',
     name: 'Binary Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-binary-heap',
   },
   {
     color: 'red',
