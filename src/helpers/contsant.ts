@@ -17,11 +17,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
   { color: 'green', name: 'Stack', path: '', tooltip: '', link: 'ds-stack' },
   { color: 'green', name: 'Queue', path: '', tooltip: '', link: 'ds-queue' },
   {
-    color: 'red',
+    color: 'green',
     name: 'Hash Table',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-hash-table',
   },
 
   // Trees
