@@ -40,11 +40,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-bst',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'AVL Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-avl-tree',
   },
   {
     color: 'green',
