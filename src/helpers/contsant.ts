@@ -82,11 +82,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Segment Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-segment-tree',
   },
   {
     color: 'red',
@@ -876,11 +876,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Segment Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-segment-tree',
   },
   {
     color: 'red',
