@@ -135,25 +135,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-graph',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Directed Graph ',
     path: '',
     tooltip: 'Digraph',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-graph',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Weighted Graph',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-graph',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Directed Acyclic Graph',
     path: '',
     tooltip: 'DAG',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-graph',
   },
 
   // Advanced List Structures
@@ -862,11 +862,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Advanced Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Trie Implementation',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-trie',
   },
   {
     color: 'red',
