@@ -33,11 +33,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-binary-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'BST',
     path: '',
     tooltip: 'Binary Search Tree',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-bst',
   },
   {
     color: 'red',
