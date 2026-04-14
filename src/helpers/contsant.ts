@@ -816,11 +816,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Backtracking
   {
-    color: 'red',
+    color: 'green',
     name: 'N-Queens Problem',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-n-queens',
   },
   {
     color: 'red',
