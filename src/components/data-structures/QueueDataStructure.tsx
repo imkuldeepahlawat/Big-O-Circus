@@ -95,13 +95,13 @@ const QueueDataStructure: React.FC = () => {
             onClick={enqueue}
             className='bg-blue-500 text-white px-4 py-2 rounded mr-2'
           >
-            Push
+            Enqueue
           </button>
           <button
             onClick={dequeue}
             className='bg-red-500 text-white px-4 py-2 rounded'
           >
-            Pop
+            Dequeue
           </button>
         </div>
       </div>
