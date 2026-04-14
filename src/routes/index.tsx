@@ -31,6 +31,9 @@ const KDTreeDataStructure = lazy(
 const HashtableDataStructure = lazy(
   () => import('@/components/data-structures/HashtableDataStructure')
 );
+const GraphDataStructure = lazy(
+  () => import('@/components/data-structures/GraphDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -126,6 +129,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-hash-table',
         element: withSuspense(HashtableDataStructure),
+      },
+      {
+        path: 'ds-graph',
+        element: withSuspense(GraphDataStructure),
       },
 
       // Algorithms routes
