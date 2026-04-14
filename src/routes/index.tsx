@@ -35,6 +35,9 @@ const BinaryHeapDataStructure = lazy(
 const KDTreeDataStructure = lazy(
   () => import('@/components/data-structures/KDTreeDataStructure')
 );
+const TrieDataStructure = lazy(
+  () => import('@/components/data-structures/TrieDataStructure')
+);
 const HashtableDataStructure = lazy(
   () => import('@/components/data-structures/HashtableDataStructure')
 );
@@ -163,6 +166,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-binary-heap',
         element: withSuspense(BinaryHeapDataStructure),
+      },
+      {
+        path: 'ds-trie',
+        element: withSuspense(TrieDataStructure),
       },
 
       // Algorithms routes
