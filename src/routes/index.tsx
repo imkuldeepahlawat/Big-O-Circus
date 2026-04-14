@@ -95,9 +95,6 @@ const LinearSearchCircus = lazy(
 const DijkstraAlgorithm = lazy(
   () => import('@/components/algorithms/DijkstraAlgorithm')
 );
-const RadixSortCircus = lazy(
-  () => import('@/components/algorithms/RadixSortCircus')
-);
 const NQueensCircus = lazy(
   () => import('@/components/algorithms/NQueensCircus')
 );
@@ -250,10 +247,6 @@ const routes: RouteObject[] = [
       {
         path: 'algo-dijkstra',
         element: withSuspense(DijkstraAlgorithm),
-      },
-      {
-        path: 'algo-radix-sort',
-        element: withSuspense(RadixSortCircus),
       },
       {
         path: 'algo-n-queens',
