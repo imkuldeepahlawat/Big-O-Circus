@@ -1,7 +1,7 @@
 export const dataStructuresComponentLinkList: componentLinkTT[] = [
   // Basic Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Array',
     path: '',
     tooltip: '',
@@ -289,11 +289,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'K-d Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-kd-tree',
   },
   {
     color: 'red',
@@ -497,32 +497,32 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-selection-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Insertion Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-insertion-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Merge Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-merge-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Quick Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-quick-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Heap Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-heap-sort',
   },
   {
     color: 'red',
@@ -532,11 +532,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Counting Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-counting-sort',
   },
   {
     color: 'red',
@@ -548,18 +548,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Searching Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'Linear Search',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-linear-search',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Binary Search',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-binary-search',
   },
   {
     color: 'red',

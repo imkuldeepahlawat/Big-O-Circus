@@ -20,6 +20,11 @@ const BinaryTreeDataStructure = lazy(
   () => import('@/components/data-structures/BinaryTreeDataStructure')
 );
 
+// More Data Structures
+const KDTreeDataStructure = lazy(
+  () => import('@/components/data-structures/KDTreeDataStructure')
+);
+
 // Algorithms
 const BfsAlgorithmCircus = lazy(
   () => import('@/components/algorithms/BfsAlgorithmCircus')
@@ -32,6 +37,27 @@ const BubbleSortCircus = lazy(
 );
 const SelectionSortAlgorithmCircus = lazy(
   () => import('@/components/algorithms/SelectionSortAlgorithmCircus')
+);
+const InsertionSortCircus = lazy(
+  () => import('@/components/algorithms/InsertionSortCircus')
+);
+const MergeSortCircus = lazy(
+  () => import('@/components/algorithms/MergeSortCircus')
+);
+const QuickSortCircus = lazy(
+  () => import('@/components/algorithms/QuickSortCircus')
+);
+const HeapSortCircus = lazy(
+  () => import('@/components/algorithms/HeapSortCircus')
+);
+const CountingSortCircus = lazy(
+  () => import('@/components/algorithms/CountingSortCircus')
+);
+const BinarySearchCircus = lazy(
+  () => import('@/components/algorithms/BinarySearchCircus')
+);
+const LinearSearchCircus = lazy(
+  () => import('@/components/algorithms/LinearSearchCircus')
 );
 
 // Pages
@@ -82,6 +108,10 @@ const routes: RouteObject[] = [
         path: 'ds-binary-tree',
         element: withSuspense(BinaryTreeDataStructure),
       },
+      {
+        path: 'ds-kd-tree',
+        element: withSuspense(KDTreeDataStructure),
+      },
 
       // Algorithms routes
       {
@@ -103,6 +133,34 @@ const routes: RouteObject[] = [
       {
         path: 'algo-selection-sort',
         element: withSuspense(SelectionSortAlgorithmCircus),
+      },
+      {
+        path: 'algo-insertion-sort',
+        element: withSuspense(InsertionSortCircus),
+      },
+      {
+        path: 'algo-merge-sort',
+        element: withSuspense(MergeSortCircus),
+      },
+      {
+        path: 'algo-quick-sort',
+        element: withSuspense(QuickSortCircus),
+      },
+      {
+        path: 'algo-heap-sort',
+        element: withSuspense(HeapSortCircus),
+      },
+      {
+        path: 'algo-counting-sort',
+        element: withSuspense(CountingSortCircus),
+      },
+      {
+        path: 'algo-binary-search',
+        element: withSuspense(BinarySearchCircus),
+      },
+      {
+        path: 'algo-linear-search',
+        element: withSuspense(LinearSearchCircus),
       },
 
       // Catch-all route for 404
