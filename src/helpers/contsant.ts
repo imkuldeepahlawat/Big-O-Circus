@@ -128,11 +128,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Graphs
   {
-    color: 'red',
+    color: 'green',
     name: 'Undirected Graph',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-graph',
   },
   {
     color: 'red',
