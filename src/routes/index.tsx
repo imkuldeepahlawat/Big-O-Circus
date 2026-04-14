@@ -32,6 +32,16 @@ const AVLTreeDataStructure = lazy(
   () => import('@/components/data-structures/AVLTreeDataStructure')
 );
 
+const PriorityQueueDataStructure = lazy(
+  () => import('@/components/data-structures/PriorityQueueDataStructure')
+);
+const DequeDataStructure = lazy(
+  () => import('@/components/data-structures/DequeDataStructure')
+);
+const CircularQueueDataStructure = lazy(
+  () => import('@/components/data-structures/CircularQueueDataStructure')
+);
+
 // More Data Structures
 const BinaryHeapDataStructure = lazy(
   () => import('@/components/data-structures/BinaryHeapDataStructure')
@@ -189,6 +199,18 @@ const routes: RouteObject[] = [
       {
         path: 'ds-fenwick-tree',
         element: withSuspense(FenwickTreeDataStructure),
+      },
+      {
+        path: 'ds-priority-queue',
+        element: withSuspense(PriorityQueueDataStructure),
+      },
+      {
+        path: 'ds-deque',
+        element: withSuspense(DequeDataStructure),
+      },
+      {
+        path: 'ds-circular-queue',
+        element: withSuspense(CircularQueueDataStructure),
       },
 
       // Algorithms routes
