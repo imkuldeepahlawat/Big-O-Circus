@@ -46,3 +46,6 @@ bun.lockb
 
 # Three.js cloned repo (assets only)
 assets/threejs-repo
+
+# Claude Code
+.claude
