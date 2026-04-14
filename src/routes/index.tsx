@@ -29,6 +29,9 @@ const RedBlackTreeDataStructure = lazy(
 );
 
 // More Data Structures
+const BinaryHeapDataStructure = lazy(
+  () => import('@/components/data-structures/BinaryHeapDataStructure')
+);
 const KDTreeDataStructure = lazy(
   () => import('@/components/data-structures/KDTreeDataStructure')
 );
@@ -156,6 +159,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-graph',
         element: withSuspense(GraphDataStructure),
+      },
+      {
+        path: 'ds-binary-heap',
+        element: withSuspense(BinaryHeapDataStructure),
       },
 
       // Algorithms routes
