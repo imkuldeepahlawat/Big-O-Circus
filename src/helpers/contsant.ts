@@ -643,11 +643,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Dynamic Programming
   {
-    color: 'red',
+    color: 'green',
     name: 'Fibonacci Sequence',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-fibonacci',
   },
   {
     color: 'red',

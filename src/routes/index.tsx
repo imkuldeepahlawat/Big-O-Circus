@@ -85,6 +85,9 @@ const RadixSortCircus = lazy(
 const NQueensCircus = lazy(
   () => import('@/components/algorithms/NQueensCircus')
 );
+const FibonacciDPCircus = lazy(
+  () => import('@/components/algorithms/FibonacciDPCircus')
+);
 
 // Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -219,6 +222,10 @@ const routes: RouteObject[] = [
       {
         path: 'algo-n-queens',
         element: withSuspense(NQueensCircus),
+      },
+      {
+        path: 'algo-fibonacci',
+        element: withSuspense(FibonacciDPCircus),
       },
 
       // Catch-all route for 404
