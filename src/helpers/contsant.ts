@@ -606,18 +606,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-dijkstra',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Bellman-Ford Algorithm',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-bellman-ford',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Floyd-Warshall Algorithm',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-floyd-warshall',
   },
   {
     color: 'red',
@@ -634,11 +634,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Topological Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-topological-sort',
   },
 
   // Dynamic Programming

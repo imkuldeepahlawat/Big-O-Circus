@@ -120,6 +120,15 @@ const NQueensCircus = lazy(
 const FibonacciDPCircus = lazy(
   () => import('@/components/algorithms/FibonacciDPCircus')
 );
+const BellmanFordCircus = lazy(
+  () => import('@/components/algorithms/BellmanFordCircus')
+);
+const FloydWarshallCircus = lazy(
+  () => import('@/components/algorithms/FloydWarshallCircus')
+);
+const TopologicalSortCircus = lazy(
+  () => import('@/components/algorithms/TopologicalSortCircus')
+);
 
 // Pages
 const Home = lazy(() => import('../pages/Home'));
@@ -298,6 +307,18 @@ const routes: RouteObject[] = [
       {
         path: 'algo-fibonacci',
         element: withSuspense(FibonacciDPCircus),
+      },
+      {
+        path: 'algo-bellman-ford',
+        element: withSuspense(BellmanFordCircus),
+      },
+      {
+        path: 'algo-floyd-warshall',
+        element: withSuspense(FloydWarshallCircus),
+      },
+      {
+        path: 'algo-topological-sort',
+        element: withSuspense(TopologicalSortCircus),
       },
 
       // Catch-all route for 404
