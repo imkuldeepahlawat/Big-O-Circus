@@ -599,11 +599,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-dfs',
   },
   {
-    color: 'red',
+    color: 'green',
     name: "Dijkstra's Algorithm",
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-dijkstra',
   },
   {
     color: 'red',
