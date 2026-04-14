@@ -47,11 +47,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Red-Black Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-red-black-tree',
   },
   {
     color: 'red',
