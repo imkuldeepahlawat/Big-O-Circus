@@ -1,3 +1,5 @@
+import { componentLinkTT, problemLinkTT } from '@/types/contantTypes';
+
 export const dataStructuresComponentLinkList: componentLinkTT[] = [
   // Basic Data Structures
   {
@@ -932,5 +934,20 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     path: '',
     tooltip: '',
     link: 'http://kuldeepahlawat.in',
+  },
+];
+
+export const problemsLinkList: problemLinkTT[] = [
+  // Array Problems
+  {
+    color: 'green',
+    number: 1,
+    name: 'Two Sum',
+    difficulty: 'Easy',
+    level: 'Junior',
+    topics: ['Array', 'Hash Table'],
+    tooltip:
+      'Given an array and a target, return indices of two numbers that add up to target.',
+    link: 'problem-two-sum',
   },
 ];

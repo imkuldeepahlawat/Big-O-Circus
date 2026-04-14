@@ -130,12 +130,18 @@ const TopologicalSortCircus = lazy(
   () => import('@/components/algorithms/TopologicalSortCircus')
 );
 
+// Problems
+const TwoSumProblem = lazy(
+  () => import('@/components/problems/TwoSumProblem')
+);
+
 // Pages
 const Home = lazy(() => import('../pages/Home'));
 const DataStructuresDashboard = lazy(
   () => import('../pages/DataStructuresDashboard')
 );
 const AlgorithmsDashboard = lazy(() => import('../pages/AlgorithmsDashboard'));
+const ProblemsDashboard = lazy(() => import('../pages/ProblemsDashboard'));
 
 // Wrap component with Suspense
 const withSuspense = (Component: React.ComponentType) => (
@@ -319,6 +325,16 @@ const routes: RouteObject[] = [
       {
         path: 'algo-topological-sort',
         element: withSuspense(TopologicalSortCircus),
+      },
+
+      // Problems routes
+      {
+        path: 'problems',
+        element: withSuspense(ProblemsDashboard),
+      },
+      {
+        path: 'problem-two-sum',
+        element: withSuspense(TwoSumProblem),
       },
 
       // Catch-all route for 404
