@@ -28,6 +28,10 @@ const RedBlackTreeDataStructure = lazy(
   () => import('@/components/data-structures/RedBlackTreeDataStructure')
 );
 
+const AVLTreeDataStructure = lazy(
+  () => import('@/components/data-structures/AVLTreeDataStructure')
+);
+
 // More Data Structures
 const BinaryHeapDataStructure = lazy(
   () => import('@/components/data-structures/BinaryHeapDataStructure')
@@ -150,6 +154,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-red-black-tree',
         element: withSuspense(RedBlackTreeDataStructure),
+      },
+      {
+        path: 'ds-avl-tree',
+        element: withSuspense(AVLTreeDataStructure),
       },
       {
         path: 'ds-kd-tree',
