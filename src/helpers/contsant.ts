@@ -158,11 +158,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Advanced List Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Skip List',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-skip-list',
   },
   {
     color: 'red',
@@ -211,18 +211,18 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Set Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Disjoint Set ',
     path: '',
     tooltip: 'Union-Find',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-disjoint-set',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Bloom Filter',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-bloom-filter',
   },
 
   // Advanced Array Structures
@@ -883,11 +883,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'ds-segment-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Disjoint Set',
     path: '',
     tooltip: 'Union-Find',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-disjoint-set',
   },
 
   // Machine Learning Algorithms

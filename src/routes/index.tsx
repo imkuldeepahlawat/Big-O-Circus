@@ -64,6 +64,15 @@ const SegmentTreeDataStructure = lazy(
 const FenwickTreeDataStructure = lazy(
   () => import('@/components/data-structures/FenwickTreeDataStructure')
 );
+const SkipListDataStructure = lazy(
+  () => import('@/components/data-structures/SkipListDataStructure')
+);
+const DisjointSetDataStructure = lazy(
+  () => import('@/components/data-structures/DisjointSetDataStructure')
+);
+const BloomFilterDataStructure = lazy(
+  () => import('@/components/data-structures/BloomFilterDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -211,6 +220,18 @@ const routes: RouteObject[] = [
       {
         path: 'ds-circular-queue',
         element: withSuspense(CircularQueueDataStructure),
+      },
+      {
+        path: 'ds-skip-list',
+        element: withSuspense(SkipListDataStructure),
+      },
+      {
+        path: 'ds-disjoint-set',
+        element: withSuspense(DisjointSetDataStructure),
+      },
+      {
+        path: 'ds-bloom-filter',
+        element: withSuspense(BloomFilterDataStructure),
       },
 
       // Algorithms routes
