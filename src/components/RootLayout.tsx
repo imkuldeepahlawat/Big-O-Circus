@@ -32,6 +32,11 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
       return 'from-blue-50 to-blue-100';
     } else if (location.pathname.startsWith('/ds-')) {
       return 'from-purple-50 to-purple-100';
+    } else if (
+      location.pathname === '/problems' ||
+      location.pathname.startsWith('/problem-')
+    ) {
+      return 'from-emerald-50 to-teal-100';
     } else if (location.pathname === '/algorithms') {
       return 'from-blue-50 to-blue-100';
     } else if (location.pathname === '/datastructure') {
@@ -94,6 +99,20 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
                   }
                 >
                   Algorithms
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to={'/problems'}
+                  className={({ isActive }) =>
+                    `px-4 py-2 rounded-md transition-all duration-300 ${
+                      isActive
+                        ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md'
+                        : 'hover:bg-emerald-100 text-gray-700 hover:text-emerald-700 border border-transparent hover:border-emerald-200'
+                    }`
+                  }
+                >
+                  Problems
                 </NavLink>
               </li>
             </ul>
