@@ -14,6 +14,9 @@ const StackDataStructure: React.FC = () => {
       );
       updateStackVisualization();
     }
+    return () => {
+      stackDsCircusViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -23,17 +26,13 @@ const StackDataStructure: React.FC = () => {
   const updateStackVisualization = () => {
     if (stackDsCircusViewerRef.current) {
       // Clear existing scene
-      while (stackDsCircusViewerRef.current.scene.children.length > 0) {
-        stackDsCircusViewerRef.current.scene.remove(
-          stackDsCircusViewerRef.current.scene.children[0]
-        );
-      }
+      stackDsCircusViewerRef.current.disposeSceneChildren();
 
       const stackGroup = new THREE.Group();
 
       for (let i = 0; i < stack.length; i++) {
         const geometry = new THREE.BoxGeometry(1, 0.5, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
         const cube = new THREE.Mesh(geometry, material);
 
         cube.position.y = i * 0.6;

@@ -21,6 +21,9 @@ const SelectionSortAlgorithmCircus = (props: Props) => {
     } catch (err) {
       console.error('Error in initial useEffect:', err);
     }
+    return () => {
+      visualizerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -43,7 +46,7 @@ const SelectionSortAlgorithmCircus = (props: Props) => {
 
     array.forEach((value, index) => {
       const barGeometry = new THREE.BoxGeometry(1, value, 1);
-      const barMaterial = new THREE.MeshBasicMaterial({
+      const barMaterial = new THREE.MeshStandardMaterial({
         color: currentIndices.includes(index) ? 0xff0000 : 0x4287f5,
       });
       const barMesh = new THREE.Mesh(barGeometry, barMaterial);
@@ -87,11 +90,7 @@ const SelectionSortAlgorithmCircus = (props: Props) => {
 
   const clearScene = (): void => {
     if (!visualizerRef.current) return;
-    while (visualizerRef.current.scene.children.length > 0) {
-      visualizerRef.current.scene.remove(
-        visualizerRef.current.scene.children[0]
-      );
-    }
+    visualizerRef.current.disposeSceneChildren();
   };
 
   const generateRandomArray = (length: number = 10): void => {

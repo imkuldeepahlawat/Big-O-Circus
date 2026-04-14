@@ -54,6 +54,9 @@ const ArrayDataStructure = (props: Props) => {
         arrayDsCircusDomElementRef.current
       );
     }
+    return () => {
+      arrayDsCircusViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   return (

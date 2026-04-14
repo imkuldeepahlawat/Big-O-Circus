@@ -14,6 +14,9 @@ const QueueDataStructure: React.FC = () => {
       );
       updateQueueVisualization();
     }
+    return () => {
+      queueDsCircusViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -23,17 +26,13 @@ const QueueDataStructure: React.FC = () => {
   const updateQueueVisualization = () => {
     if (queueDsCircusViewerRef.current) {
       // Clear existing scene
-      while (queueDsCircusViewerRef.current.scene.children.length > 0) {
-        queueDsCircusViewerRef.current.scene.remove(
-          queueDsCircusViewerRef.current.scene.children[0]
-        );
-      }
+      queueDsCircusViewerRef.current.disposeSceneChildren();
 
       const queueGroup = new THREE.Group();
 
       for (let i = 0; i < queue.length; i++) {
         const geometry = new THREE.BoxGeometry(1, 0.5, 1);
-        const material = new THREE.MeshBasicMaterial({ color: 0x4287f5 });
+        const material = new THREE.MeshStandardMaterial({ color: 0x4287f5 });
         const cube = new THREE.Mesh(geometry, material);
 
         cube.position.x = i * 1.2;

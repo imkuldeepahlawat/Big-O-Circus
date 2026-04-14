@@ -32,6 +32,9 @@ const BinaryTreeDataStructure = (props: Props) => {
       );
       updateTreeVisualization();
     }
+    return () => {
+      treeViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -41,11 +44,7 @@ const BinaryTreeDataStructure = (props: Props) => {
   const updateTreeVisualization = () => {
     if (treeViewerRef.current) {
       // Clear existing scene
-      while (treeViewerRef.current.scene.children.length > 0) {
-        treeViewerRef.current.scene.remove(
-          treeViewerRef.current.scene.children[0]
-        );
-      }
+      treeViewerRef.current.disposeSceneChildren();
 
       const treeGroup = new THREE.Group();
 
@@ -66,7 +65,7 @@ const BinaryTreeDataStructure = (props: Props) => {
     group: THREE.Group
   ) => {
     const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({
+    const material = new THREE.MeshStandardMaterial({
       color: highlightedNodes.has(node.value) ? 0xff0000 : 0x4287f5,
     });
     const sphere = new THREE.Mesh(geometry, material);
@@ -309,11 +308,7 @@ const BinaryTreeDataStructure = (props: Props) => {
     setHighlightedNodes(new Set());
     if (treeViewerRef.current) {
       // Clear existing scene
-      while (treeViewerRef.current.scene.children.length > 0) {
-        treeViewerRef.current.scene.remove(
-          treeViewerRef.current.scene.children[0]
-        );
-      }
+      treeViewerRef.current.disposeSceneChildren();
       treeViewerRef.current.enableRender();
     }
   };

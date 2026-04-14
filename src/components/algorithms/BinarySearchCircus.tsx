@@ -20,6 +20,9 @@ const BinarySearchCircus: React.FC = () => {
     } catch (err) {
       console.error('Error in initial useEffect:', err);
     }
+    return () => {
+      visualizerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -59,7 +62,7 @@ const BinarySearchCircus: React.FC = () => {
       }
 
       const barGeometry = new THREE.BoxGeometry(barWidth, value, barWidth);
-      const barMaterial = new THREE.MeshBasicMaterial({ color });
+      const barMaterial = new THREE.MeshStandardMaterial({ color });
       const barMesh = new THREE.Mesh(barGeometry, barMaterial);
       barMesh.position.set(
         index * spacing - ((array.length - 1) * spacing) / 2, // Center the array
@@ -101,11 +104,7 @@ const BinarySearchCircus: React.FC = () => {
 
   const clearScene = (): void => {
     if (!visualizerRef.current) return;
-    while (visualizerRef.current.scene.children.length > 0) {
-      visualizerRef.current.scene.remove(
-        visualizerRef.current.scene.children[0]
-      );
-    }
+    visualizerRef.current.disposeSceneChildren();
   };
 
   const generateSortedArray = (length: number = 10): void => {

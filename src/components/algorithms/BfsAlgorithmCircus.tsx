@@ -32,6 +32,9 @@ const BfsAlgorithmCircus: React.FC = () => {
       visualizerRef.current = new Algorithm3DPreviewer(canvasRef.current);
       updateVisualization();
     }
+    return () => {
+      visualizerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -55,11 +58,7 @@ const BfsAlgorithmCircus: React.FC = () => {
   };
 
   const clearScene = (): void => {
-    while (visualizerRef.current?.scene.children.length ?? 0 > 0) {
-      visualizerRef.current?.scene.remove(
-        visualizerRef.current.scene.children[0]
-      );
-    }
+    visualizerRef.current?.disposeSceneChildren();
   };
 
   const visualizeTree = (
@@ -70,7 +69,7 @@ const BfsAlgorithmCircus: React.FC = () => {
     group: THREE.Group
   ): void => {
     const nodeGeometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const nodeMaterial = new THREE.MeshBasicMaterial({
+    const nodeMaterial = new THREE.MeshStandardMaterial({
       color: currentVisitedLevel?.includes(node.value) ? 0xff0000 : 0x4287f5,
     });
     const nodeSphere = new THREE.Mesh(nodeGeometry, nodeMaterial);

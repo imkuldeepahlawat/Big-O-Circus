@@ -33,6 +33,9 @@ const DfsAlgorithmCircus: React.FC = () => {
       );
       updateTreeVisualization();
     }
+    return () => {
+      treeViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -41,11 +44,7 @@ const DfsAlgorithmCircus: React.FC = () => {
 
   const updateTreeVisualization = () => {
     if (treeViewerRef.current) {
-      while (treeViewerRef.current.scene.children.length > 0) {
-        treeViewerRef.current.scene.remove(
-          treeViewerRef.current.scene.children[0]
-        );
-      }
+      treeViewerRef.current.disposeSceneChildren();
 
       const treeGroup = new THREE.Group();
 
@@ -66,7 +65,7 @@ const DfsAlgorithmCircus: React.FC = () => {
     group: THREE.Group
   ) => {
     const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({
+    const material = new THREE.MeshStandardMaterial({
       color: highlightedNodes.has(node.value) ? 0xff0000 : 0x4287f5,
     });
     const sphere = new THREE.Mesh(geometry, material);
@@ -223,11 +222,7 @@ const DfsAlgorithmCircus: React.FC = () => {
     setHighlightedNodes(new Set());
     setHighlightedLinks(new Set());
     if (treeViewerRef.current) {
-      while (treeViewerRef.current.scene.children.length > 0) {
-        treeViewerRef.current.scene.remove(
-          treeViewerRef.current.scene.children[0]
-        );
-      }
+      treeViewerRef.current.disposeSceneChildren();
       treeViewerRef.current.enableRender();
     }
   };

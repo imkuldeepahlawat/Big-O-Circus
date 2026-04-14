@@ -84,6 +84,9 @@ const KDTreeDataStructure: React.FC = () => {
       kdTreeViewerRef.current.camera.position.set(5, 5, 5);
       updateKDTreeVisualization();
     }
+    return () => {
+      kdTreeViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -319,11 +322,7 @@ const KDTreeDataStructure: React.FC = () => {
     if (!kdTreeViewerRef.current) return;
 
     // Clear existing scene
-    while (kdTreeViewerRef.current.scene.children.length > 0) {
-      kdTreeViewerRef.current.scene.remove(
-        kdTreeViewerRef.current.scene.children[0]
-      );
-    }
+    kdTreeViewerRef.current.disposeSceneChildren();
 
     const treeGroup = new THREE.Group();
 
@@ -335,7 +334,7 @@ const KDTreeDataStructure: React.FC = () => {
       const visualizeNode = (node: KDNode) => {
         // Create sphere for point
         const nodeGeometry = new THREE.SphereGeometry(0.1);
-        const nodeMaterial = new THREE.MeshBasicMaterial({
+        const nodeMaterial = new THREE.MeshStandardMaterial({
           color: collisionState.collidingPoints.includes(node.point)
             ? 0xff0000 // Red for colliding points
             : spatialQueryState.pointsInRegion.includes(node)
@@ -392,7 +391,9 @@ const KDTreeDataStructure: React.FC = () => {
       // Visualize search point and connection to nearest neighbor
       if (searchState.searchPoint) {
         const searchGeometry = new THREE.SphereGeometry(0.15);
-        const searchMaterial = new THREE.MeshBasicMaterial({ color: 0xff00ff }); // Magenta
+        const searchMaterial = new THREE.MeshStandardMaterial({
+          color: 0xff00ff,
+        }); // Magenta
         const searchMesh = new THREE.Mesh(searchGeometry, searchMaterial);
         searchMesh.position.set(
           searchState.searchPoint.x,
@@ -504,11 +505,7 @@ const KDTreeDataStructure: React.FC = () => {
 
     // Clear the scene
     if (kdTreeViewerRef.current) {
-      while (kdTreeViewerRef.current.scene.children.length > 0) {
-        kdTreeViewerRef.current.scene.remove(
-          kdTreeViewerRef.current.scene.children[0]
-        );
-      }
+      kdTreeViewerRef.current.disposeSceneChildren();
       kdTreeViewerRef.current.enableRender();
     }
   };

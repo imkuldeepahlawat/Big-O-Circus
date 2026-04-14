@@ -24,6 +24,9 @@ const LinkedListDataStructure: React.FC<Props> = () => {
       );
       updateLinkedListVisualization();
     }
+    return () => {
+      linkedListViewerRef.current?.disposeCircus();
+    };
   }, []);
 
   useEffect(() => {
@@ -34,18 +37,16 @@ const LinkedListDataStructure: React.FC<Props> = () => {
   const updateLinkedListVisualization = () => {
     if (linkedListViewerRef.current) {
       // Clear existing scene
-      while (linkedListViewerRef.current.scene.children.length > 0) {
-        linkedListViewerRef.current.scene.remove(
-          linkedListViewerRef.current.scene.children[0]
-        );
-      }
+      linkedListViewerRef.current.disposeSceneChildren();
 
       const linkedListGroup = new THREE.Group();
       linkedListViewerRef.current.scene.add(linkedListGroup);
 
       for (let i = 0; i < linkedList.length; i++) {
         const nodeGeometry = new THREE.BoxGeometry(1, 0.5, 1);
-        const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const nodeMaterial = new THREE.MeshStandardMaterial({
+          color: 0x00ff00,
+        });
         const nodeMesh = new THREE.Mesh(nodeGeometry, nodeMaterial);
 
         nodeMesh.position.x = i * 2 - 0.1;
@@ -79,7 +80,7 @@ const LinkedListDataStructure: React.FC<Props> = () => {
         // Add arrow to next node
         if (i < linkedList.length - 1) {
           const arrowGeometry = new THREE.ConeGeometry(0.1, 0.3, 32);
-          const arrowMaterial = new THREE.MeshBasicMaterial({
+          const arrowMaterial = new THREE.MeshStandardMaterial({
             color: 0x0000ff,
           });
           const arrow = new THREE.Mesh(arrowGeometry, arrowMaterial);
