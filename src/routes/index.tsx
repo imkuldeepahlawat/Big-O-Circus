@@ -48,6 +48,9 @@ const HashtableDataStructure = lazy(
 const GraphDataStructure = lazy(
   () => import('@/components/data-structures/GraphDataStructure')
 );
+const SegmentTreeDataStructure = lazy(
+  () => import('@/components/data-structures/SegmentTreeDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -178,6 +181,10 @@ const routes: RouteObject[] = [
       {
         path: 'ds-trie',
         element: withSuspense(TrieDataStructure),
+      },
+      {
+        path: 'ds-segment-tree',
+        element: withSuspense(SegmentTreeDataStructure),
       },
 
       // Algorithms routes
