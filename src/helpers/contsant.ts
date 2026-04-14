@@ -188,25 +188,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Queue Variants
   {
-    color: 'red',
+    color: 'green',
     name: 'Priority Queue',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-priority-queue',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Deque ',
     path: '',
     tooltip: 'Double-ended Queue',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-deque',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Circular Queue',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-circular-queue',
   },
 
   // Set Structures

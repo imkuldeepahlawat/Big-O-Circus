@@ -32,6 +32,16 @@ const AVLTreeDataStructure = lazy(
   () => import('@/components/data-structures/AVLTreeDataStructure')
 );
 
+const PriorityQueueDataStructure = lazy(
+  () => import('@/components/data-structures/PriorityQueueDataStructure')
+);
+const DequeDataStructure = lazy(
+  () => import('@/components/data-structures/DequeDataStructure')
+);
+const CircularQueueDataStructure = lazy(
+  () => import('@/components/data-structures/CircularQueueDataStructure')
+);
+
 // More Data Structures
 const BinaryHeapDataStructure = lazy(
   () => import('@/components/data-structures/BinaryHeapDataStructure')
@@ -94,9 +104,6 @@ const LinearSearchCircus = lazy(
 );
 const DijkstraAlgorithm = lazy(
   () => import('@/components/algorithms/DijkstraAlgorithm')
-);
-const RadixSortCircus = lazy(
-  () => import('@/components/algorithms/RadixSortCircus')
 );
 const NQueensCircus = lazy(
   () => import('@/components/algorithms/NQueensCircus')
@@ -193,6 +200,18 @@ const routes: RouteObject[] = [
         path: 'ds-fenwick-tree',
         element: withSuspense(FenwickTreeDataStructure),
       },
+      {
+        path: 'ds-priority-queue',
+        element: withSuspense(PriorityQueueDataStructure),
+      },
+      {
+        path: 'ds-deque',
+        element: withSuspense(DequeDataStructure),
+      },
+      {
+        path: 'ds-circular-queue',
+        element: withSuspense(CircularQueueDataStructure),
+      },
 
       // Algorithms routes
       {
@@ -250,10 +269,6 @@ const routes: RouteObject[] = [
       {
         path: 'algo-dijkstra',
         element: withSuspense(DijkstraAlgorithm),
-      },
-      {
-        path: 'algo-radix-sort',
-        element: withSuspense(RadixSortCircus),
       },
       {
         path: 'algo-n-queens',
