@@ -261,34 +261,34 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Probabilistic Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Count-Min Sketch',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-count-min-sketch',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'HyperLogLog',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-hyperloglog',
   },
 
   // Spatial Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'R-Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-r-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Quad-Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-quad-tree',
   },
   {
     color: 'green',
@@ -298,11 +298,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-kd-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Octree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-octree',
   },
 
   // Caches
@@ -337,25 +337,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Dancing Links',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-dancing-links',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Merkle Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-merkle-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Cuckoo Filter',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-cuckoo-filter',
   },
   {
     color: 'red',
