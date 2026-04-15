@@ -368,6 +368,30 @@ const routes: RouteObject[] = [
         path: 'algo-huffman',
         element: withSuspense(HuffmanCodingCircus),
       },
+      {
+        path: 'algo-lcs',
+        element: withSuspense(LCSCircus),
+      },
+      {
+        path: 'algo-knapsack',
+        element: withSuspense(KnapsackCircus),
+      },
+      {
+        path: 'algo-lis',
+        element: withSuspense(LISCircus),
+      },
+      {
+        path: 'algo-kmp',
+        element: withSuspense(KMPCircus),
+      },
+      {
+        path: 'algo-sieve',
+        element: withSuspense(SieveCircus),
+      },
+      {
+        path: 'algo-bucket-sort',
+        element: withSuspense(BucketSortCircus),
+      },
 
       // Problems routes
       {
