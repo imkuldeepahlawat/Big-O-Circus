@@ -107,25 +107,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-binary-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Fibonacci Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-fibonacci-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Pairing Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-pairing-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Binomial Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-binomial-heap',
   },
 
   // Graphs

@@ -64,6 +64,15 @@ const SegmentTreeDataStructure = lazy(
 const FenwickTreeDataStructure = lazy(
   () => import('@/components/data-structures/FenwickTreeDataStructure')
 );
+const FibonacciHeapDataStructure = lazy(
+  () => import('@/components/data-structures/FibonacciHeapDataStructure')
+);
+const PairingHeapDataStructure = lazy(
+  () => import('@/components/data-structures/PairingHeapDataStructure')
+);
+const BinomialHeapDataStructure = lazy(
+  () => import('@/components/data-structures/BinomialHeapDataStructure')
+);
 const BTreeDataStructure = lazy(
   () => import('@/components/data-structures/BTreeDataStructure')
 );
@@ -268,6 +277,18 @@ const routes: RouteObject[] = [
       {
         path: 'ds-fenwick-tree',
         element: withSuspense(FenwickTreeDataStructure),
+      },
+      {
+        path: 'ds-fibonacci-heap',
+        element: withSuspense(FibonacciHeapDataStructure),
+      },
+      {
+        path: 'ds-pairing-heap',
+        element: withSuspense(PairingHeapDataStructure),
+      },
+      {
+        path: 'ds-binomial-heap',
+        element: withSuspense(BinomialHeapDataStructure),
       },
       {
         path: 'ds-b-tree',
