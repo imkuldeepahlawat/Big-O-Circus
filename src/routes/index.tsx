@@ -375,7 +375,6 @@ const routes: RouteObject[] = [
         element: withSuspense(TopologicalSortCircus),
       },
       {
-<<<<<<< HEAD
         path: 'algo-kruskal',
         element: withSuspense(KruskalCircus),
       },
