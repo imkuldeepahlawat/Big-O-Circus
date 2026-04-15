@@ -147,6 +147,24 @@ const PrimCircus = lazy(
 const HuffmanCodingCircus = lazy(
   () => import('@/components/algorithms/HuffmanCodingCircus')
 );
+const JumpSearchCircus = lazy(
+  () => import('@/components/algorithms/JumpSearchCircus')
+);
+const InterpolationSearchCircus = lazy(
+  () => import('@/components/algorithms/InterpolationSearchCircus')
+);
+const ExponentialSearchCircus = lazy(
+  () => import('@/components/algorithms/ExponentialSearchCircus')
+);
+const SudokuSolverCircus = lazy(
+  () => import('@/components/algorithms/SudokuSolverCircus')
+);
+const GrahamScanCircus = lazy(
+  () => import('@/components/algorithms/GrahamScanCircus')
+);
+const KMeansCircus = lazy(
+  () => import('@/components/algorithms/KMeansCircus')
+);
 
 // Problems
 const TwoSumProblem = lazy(
@@ -357,6 +375,7 @@ const routes: RouteObject[] = [
         element: withSuspense(TopologicalSortCircus),
       },
       {
+<<<<<<< HEAD
         path: 'algo-kruskal',
         element: withSuspense(KruskalCircus),
       },
@@ -391,6 +410,30 @@ const routes: RouteObject[] = [
       {
         path: 'algo-bucket-sort',
         element: withSuspense(BucketSortCircus),
+      },
+      {
+        path: 'algo-jump-search',
+        element: withSuspense(JumpSearchCircus),
+      },
+      {
+        path: 'algo-interpolation-search',
+        element: withSuspense(InterpolationSearchCircus),
+      },
+      {
+        path: 'algo-exponential-search',
+        element: withSuspense(ExponentialSearchCircus),
+      },
+      {
+        path: 'algo-sudoku',
+        element: withSuspense(SudokuSolverCircus),
+      },
+      {
+        path: 'algo-graham-scan',
+        element: withSuspense(GrahamScanCircus),
+      },
+      {
+        path: 'algo-k-means',
+        element: withSuspense(KMeansCircus),
       },
 
       // Problems routes

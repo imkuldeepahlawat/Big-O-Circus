@@ -564,25 +564,25 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-binary-search',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Jump Search',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-jump-search',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Interpolation Search',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-interpolation-search',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Exponential Search',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-exponential-search',
   },
 
   // Graph Algorithms
@@ -712,11 +712,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Geometric Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'Graham Scan',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-graham-scan',
   },
   {
     color: 'red',
@@ -825,11 +825,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-n-queens',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Sudoku Solver',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-sudoku',
   },
   {
     color: 'red',
@@ -894,11 +894,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Machine Learning Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'K-Means Clustering',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-k-means',
   },
   {
     color: 'red',
