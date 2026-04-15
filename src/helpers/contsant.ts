@@ -236,11 +236,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Circular Buffer',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-circular-buffer',
   },
 
   // String Data Structures
@@ -307,18 +307,18 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Caches
   {
-    color: 'red',
+    color: 'green',
     name: 'LRU Cache',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-lru-cache',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'LFU Cache',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-lfu-cache',
   },
 
   // Miscellaneous
@@ -622,18 +622,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-floyd-warshall',
   },
   {
-    color: 'red',
+    color: 'green',
     name: "Kruskal's Algorithm",
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-kruskal',
   },
   {
-    color: 'red',
+    color: 'green',
     name: "Prim's Algorithm",
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-prim',
   },
   {
     color: 'green',
@@ -795,11 +795,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Greedy Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'Huffman Coding',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-huffman',
   },
   {
     color: 'red',

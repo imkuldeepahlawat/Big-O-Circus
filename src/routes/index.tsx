@@ -73,6 +73,15 @@ const DisjointSetDataStructure = lazy(
 const BloomFilterDataStructure = lazy(
   () => import('@/components/data-structures/BloomFilterDataStructure')
 );
+const LRUCacheDataStructure = lazy(
+  () => import('@/components/data-structures/LRUCacheDataStructure')
+);
+const LFUCacheDataStructure = lazy(
+  () => import('@/components/data-structures/LFUCacheDataStructure')
+);
+const CircularBufferDataStructure = lazy(
+  () => import('@/components/data-structures/CircularBufferDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -128,6 +137,15 @@ const FloydWarshallCircus = lazy(
 );
 const TopologicalSortCircus = lazy(
   () => import('@/components/algorithms/TopologicalSortCircus')
+);
+const KruskalCircus = lazy(
+  () => import('@/components/algorithms/KruskalCircus')
+);
+const PrimCircus = lazy(
+  () => import('@/components/algorithms/PrimCircus')
+);
+const HuffmanCodingCircus = lazy(
+  () => import('@/components/algorithms/HuffmanCodingCircus')
 );
 
 // Problems
@@ -248,6 +266,18 @@ const routes: RouteObject[] = [
         path: 'ds-bloom-filter',
         element: withSuspense(BloomFilterDataStructure),
       },
+      {
+        path: 'ds-lru-cache',
+        element: withSuspense(LRUCacheDataStructure),
+      },
+      {
+        path: 'ds-lfu-cache',
+        element: withSuspense(LFUCacheDataStructure),
+      },
+      {
+        path: 'ds-circular-buffer',
+        element: withSuspense(CircularBufferDataStructure),
+      },
 
       // Algorithms routes
       {
@@ -325,6 +355,18 @@ const routes: RouteObject[] = [
       {
         path: 'algo-topological-sort',
         element: withSuspense(TopologicalSortCircus),
+      },
+      {
+        path: 'algo-kruskal',
+        element: withSuspense(KruskalCircus),
+      },
+      {
+        path: 'algo-prim',
+        element: withSuspense(PrimCircus),
+      },
+      {
+        path: 'algo-huffman',
+        element: withSuspense(HuffmanCodingCircus),
       },
 
       // Problems routes
