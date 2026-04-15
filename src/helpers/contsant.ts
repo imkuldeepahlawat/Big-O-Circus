@@ -56,18 +56,18 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-red-black-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'B-Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-b-tree',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'B+ Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-b-plus-tree',
   },
   {
     color: 'green',
@@ -77,11 +77,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-trie',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Suffix Tree',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-suffix-tree',
   },
   {
     color: 'green',
@@ -107,25 +107,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-binary-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Fibonacci Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-fibonacci-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Pairing Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-pairing-heap',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Binomial Heap',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-binomial-heap',
   },
 
   // Graphs
