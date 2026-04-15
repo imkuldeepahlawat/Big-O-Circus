@@ -91,6 +91,30 @@ const DisjointSetDataStructure = lazy(
 const BloomFilterDataStructure = lazy(
   () => import('@/components/data-structures/BloomFilterDataStructure')
 );
+const CountMinSketchDataStructure = lazy(
+  () => import('@/components/data-structures/CountMinSketchDataStructure')
+);
+const HyperLogLogDataStructure = lazy(
+  () => import('@/components/data-structures/HyperLogLogDataStructure')
+);
+const RTreeDataStructure = lazy(
+  () => import('@/components/data-structures/RTreeDataStructure')
+);
+const QuadTreeDataStructure = lazy(
+  () => import('@/components/data-structures/QuadTreeDataStructure')
+);
+const OctreeDataStructure = lazy(
+  () => import('@/components/data-structures/OctreeDataStructure')
+);
+const MerkleTreeDataStructure = lazy(
+  () => import('@/components/data-structures/MerkleTreeDataStructure')
+);
+const CuckooFilterDataStructure = lazy(
+  () => import('@/components/data-structures/CuckooFilterDataStructure')
+);
+const DancingLinksDataStructure = lazy(
+  () => import('@/components/data-structures/DancingLinksDataStructure')
+);
 const SelfOrganizingListDataStructure = lazy(
   () => import('@/components/data-structures/SelfOrganizingListDataStructure')
 );
@@ -343,6 +367,38 @@ const routes: RouteObject[] = [
       {
         path: 'ds-bloom-filter',
         element: withSuspense(BloomFilterDataStructure),
+      },
+      {
+        path: 'ds-count-min-sketch',
+        element: withSuspense(CountMinSketchDataStructure),
+      },
+      {
+        path: 'ds-hyperloglog',
+        element: withSuspense(HyperLogLogDataStructure),
+      },
+      {
+        path: 'ds-r-tree',
+        element: withSuspense(RTreeDataStructure),
+      },
+      {
+        path: 'ds-quad-tree',
+        element: withSuspense(QuadTreeDataStructure),
+      },
+      {
+        path: 'ds-octree',
+        element: withSuspense(OctreeDataStructure),
+      },
+      {
+        path: 'ds-merkle-tree',
+        element: withSuspense(MerkleTreeDataStructure),
+      },
+      {
+        path: 'ds-cuckoo-filter',
+        element: withSuspense(CuckooFilterDataStructure),
+      },
+      {
+        path: 'ds-dancing-links',
+        element: withSuspense(DancingLinksDataStructure),
       },
       {
         path: 'ds-self-organizing-list',
