@@ -541,11 +541,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-counting-sort',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Bucket Sort',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-bucket-sort',
   },
 
   // Searching Algorithms
@@ -652,18 +652,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-fibonacci',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Longest Common Subsequence',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-lcs',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Knapsack Problem',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-knapsack',
   },
   {
     color: 'red',
@@ -673,20 +673,20 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Longest Increasing Subsequence',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-lis',
   },
 
   // String Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'KMP',
     path: '',
     tooltip: 'Knuth-Morris-Pratt',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-kmp',
   },
   {
     color: 'red',
@@ -749,11 +749,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Sieve of Eratosthenes',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-sieve',
   },
   {
     color: 'red',
