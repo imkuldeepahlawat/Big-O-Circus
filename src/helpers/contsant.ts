@@ -167,25 +167,25 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'ds-skip-list',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Self-organizing List',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-self-organizing-list',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Unrolled Linked List',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-unrolled-linked-list',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'XOR Linked List',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-xor-linked-list',
   },
 
   // Queue Variants
@@ -229,11 +229,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Advanced Array Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Sparse Matrix',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-sparse-matrix',
   },
   {
     color: 'green',
@@ -245,18 +245,18 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // String Data Structures
   {
-    color: 'red',
+    color: 'green',
     name: 'Suffix Array',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-suffix-array',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Rope',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-rope',
   },
 
   // Probabilistic Data Structures
