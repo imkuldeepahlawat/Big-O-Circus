@@ -64,6 +64,15 @@ const SegmentTreeDataStructure = lazy(
 const FenwickTreeDataStructure = lazy(
   () => import('@/components/data-structures/FenwickTreeDataStructure')
 );
+const BTreeDataStructure = lazy(
+  () => import('@/components/data-structures/BTreeDataStructure')
+);
+const BPlusTreeDataStructure = lazy(
+  () => import('@/components/data-structures/BPlusTreeDataStructure')
+);
+const SuffixTreeDataStructure = lazy(
+  () => import('@/components/data-structures/SuffixTreeDataStructure')
+);
 const SkipListDataStructure = lazy(
   () => import('@/components/data-structures/SkipListDataStructure')
 );
@@ -259,6 +268,18 @@ const routes: RouteObject[] = [
       {
         path: 'ds-fenwick-tree',
         element: withSuspense(FenwickTreeDataStructure),
+      },
+      {
+        path: 'ds-b-tree',
+        element: withSuspense(BTreeDataStructure),
+      },
+      {
+        path: 'ds-b-plus-tree',
+        element: withSuspense(BPlusTreeDataStructure),
+      },
+      {
+        path: 'ds-suffix-tree',
+        element: withSuspense(SuffixTreeDataStructure),
       },
       {
         path: 'ds-priority-queue',
