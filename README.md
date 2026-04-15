@@ -1,215 +1,159 @@
 # Big O Circus 🎪
 
 <div align="center">
-  <p><i>Visualize and understand algorithms and data structures through interactive animations</i></p>
+  <p><i>Visualize and understand algorithms, data structures, and coding problems through interactive 3D animations</i></p>
   
   [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://circus.kuldeepahlawat.in/)
   [![GitHub Stars](https://img.shields.io/github/stars/imkuldeepahlawat/Big-O-Circus?style=for-the-badge&logo=github)](https://github.com/imkuldeepahlawat/Big-O-Circus/stargazers)
   [![License](https://img.shields.io/github/license/imkuldeepahlawat/Big-O-Circus?style=for-the-badge)](LICENSE)
 </div>
 
-## 📋 Overview
+## Overview
 
-Big O Circus is an interactive web application designed to help users understand algorithms and data structures through visual animations and explanations. The project aims to make complex computer science concepts more accessible and engaging through interactive demonstrations.
+Big O Circus is an interactive web application that helps you understand algorithms, data structures, and coding problems through **3D visualizations** powered by Three.js. Watch sorting algorithms swap bars in real-time, see trees rotate during AVL balancing, trace Dijkstra's shortest path on a graph, or solve Two Sum step-by-step with both brute-force and hash-map approaches.
 
-### ✨ Features
+### Features
 
-- **Interactive Visualizations**: See algorithms and data structures in action
-- **Categorized Learning**: Explore different categories of algorithms and data structures
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Intuitive UI**: User-friendly interface with smooth animations
-- **Educational Content**: Learn about time and space complexity
+- **3D Visualizations** - Interactive Three.js scenes with orbit controls, lighting, and shading
+- **65+ Implementations** - Data structures, algorithms, and coding problems with full interactivity
+- **Step-by-Step Animation** - Watch each operation happen with color-coded highlighting
+- **Multiple Approaches** - Compare brute-force vs optimized solutions (e.g., Two Sum)
+- **Complexity Display** - See Big-O time and space complexity for every operation
+- **Auto-Deploy** - Pushes to main automatically deploy to GitHub Pages
 
-## 🚀 Live Demo
+## Live Demo
 
 Visit the live application: [https://circus.kuldeepahlawat.in/](https://circus.kuldeepahlawat.in/)
 
-## 🛠️ Technologies Used
+## What's Implemented
 
-- **Frontend**: React, TypeScript, TailwindCSS
+### Data Structures (28 interactive visualizations)
+
+| Category | Implementations |
+|----------|----------------|
+| **Basic** | Array, Linked List, Stack, Queue, Hash Table |
+| **Trees** | Binary Tree, BST, AVL Tree, Red-Black Tree, Trie, Segment Tree, Fenwick Tree |
+| **Heaps** | Binary Heap |
+| **Graphs** | Undirected Graph, Directed Graph, Weighted Graph, DAG |
+| **Advanced Lists** | Skip List |
+| **Queue Variants** | Priority Queue, Deque, Circular Queue |
+| **Set Structures** | Disjoint Set (Union-Find), Bloom Filter |
+| **Caches** | LRU Cache, LFU Cache |
+| **Other** | Circular Buffer, K-d Tree |
+
+### Algorithms (36 interactive visualizations)
+
+| Category | Implementations |
+|----------|----------------|
+| **Sorting** | Bubble, Selection, Insertion, Merge, Quick, Heap, Radix, Counting, Bucket Sort |
+| **Searching** | Linear, Binary, Jump, Interpolation, Exponential Search |
+| **Graph** | BFS, DFS, Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal, Prim, Topological Sort |
+| **Dynamic Programming** | Fibonacci, LCS, 0/1 Knapsack, LIS |
+| **String** | KMP Pattern Matching |
+| **Greedy** | Huffman Coding |
+| **Backtracking** | N-Queens, Sudoku Solver |
+| **Geometric** | Graham Scan (Convex Hull) |
+| **Numerical** | Sieve of Eratosthenes |
+| **Machine Learning** | K-Means Clustering |
+
+### Problems (with solution visualizations)
+
+| Problem | Difficulty | Topics | Approaches |
+|---------|-----------|--------|------------|
+| Two Sum | Easy | Array, Hash Table | Brute Force O(n^2), Hash Map O(n) |
+
+## Tech Stack
+
+- **Frontend**: React 18, TypeScript
+- **3D Graphics**: Three.js with custom `Algorithm3DPreviewer` wrapper
+- **Styling**: TailwindCSS, Shadcn UI
 - **Animation**: Framer Motion, CSS Animations
-- **UI Components**: Shadcn UI
-- **Icons**: React Icons
-- **Build Tool**: Vite
-- **Package Manager**: Yarn
+- **Build**: Vite
+- **Deploy**: GitHub Actions -> GitHub Pages
+- **Icons**: React Icons, Lucide React
 
-## 📦 Installation
+## Getting Started
 
 ### Prerequisites
 
-- Node.js (v20.11.0 or higher)
-- Yarn (v1.22.22 or higher)
+- Node.js (v20 or higher)
+- npm
 
-### Setup Instructions
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/imkuldeepahlawat/Big-O-Circus.git
-   cd Big-O-Circus
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   yarn install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   yarn dev
-   ```
-
-4. Open your browser and navigate to `http://localhost:5173`
-
-### Docker Setup
-
-You can also run the application using Docker:
+### Setup
 
 ```bash
-# Build the Docker image
-docker build -t big-o-circus-app .
+git clone https://github.com/imkuldeepahlawat/Big-O-Circus.git
+cd Big-O-Circus
+npm install
+npm run dev
+```
 
-# Run the container
+Open `http://localhost:5173` in your browser.
+
+### Docker
+
+```bash
+docker build -t big-o-circus-app .
 docker run --name big-o-circus-app -p 8080:80 -d big-o-circus-app
 ```
 
-Then visit `http://localhost:8080` in your browser.
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 Big-O-Circus/
-├── public/                  # Static assets
 ├── src/
-│   ├── components/          # Reusable UI components
-│   │   ├── ui/              # Shadcn UI components
-│   │   └── ...              # Other components
-│   ├── helpers/             # Helper functions and constants
-│   ├── pages/               # Page components
-│   │   ├── Home.tsx         # Home page
-│   │   ├── DataStructuresDashboard.tsx  # Data structures dashboard
-│   │   ├── AlgorithmsDashboard.tsx      # Algorithms dashboard
-│   │   └── ...              # Individual algorithm/data structure pages
-│   ├── types/               # TypeScript type definitions
-│   ├── App.css              # Global styles and animations
-│   ├── App.tsx              # Main application component
-│   └── main.tsx             # Application entry point
-├── .gitignore               # Git ignore file
-├── index.html               # HTML entry point
-├── package.json             # Project dependencies and scripts
-├── tailwind.config.js       # Tailwind CSS configuration
-├── tsconfig.json            # TypeScript configuration
-└── README.md                # Project documentation
+│   ├── components/
+│   │   ├── algorithms/          # 36 algorithm visualizations
+│   │   ├── data-structures/     # 28 data structure visualizations
+│   │   ├── problems/            # Coding problem visualizations
+│   │   └── ui/                  # Shadcn UI components
+│   ├── lib/
+│   │   └── algorithm3DPreviewer.ts  # Three.js wrapper (scene, camera, lighting, disposal)
+│   ├── helpers/
+│   │   └── contsant.ts          # Registry of all DS, algorithms, and problems
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── DataStructuresDashboard.tsx
+│   │   ├── AlgorithmsDashboard.tsx
+│   │   └── ProblemsDashboard.tsx
+│   ├── routes/
+│   │   └── index.tsx            # All routes (lazy-loaded)
+│   └── types/
+│       └── contantTypes.ts      # TypeScript interfaces
+├── .github/workflows/
+│   └── deploy.yml               # Auto-deploy on push to main
+└── package.json
 ```
 
-## 🧩 Available Data Structures and Algorithms
+## Adding a New Visualization
 
-### Data Structures
+1. Create a component in `src/components/algorithms/` or `src/components/data-structures/`
+2. Follow the existing pattern:
+   ```tsx
+   import { Algorithm3DPreviewer } from '../../lib/algorithm3DPreviewer';
+   import * as THREE from 'three';
+   // useRef for canvas + viewer
+   // useEffect with disposeCircus() cleanup
+   // MeshStandardMaterial for solids, MeshBasicMaterial for labels
+   // disposeSceneChildren() to clear scene before re-render
+   ```
+3. Add lazy import and route in `src/routes/index.tsx`
+4. Add entry in `src/helpers/contsant.ts` with `color: 'green'`
+5. Push to main - auto-deploys
 
-- Arrays
-- Linked Lists
-- Stacks
-- Queues
-- Trees (Binary, BST, AVL)
-- Graphs
-- Hash Tables
-- Heaps
-- And more...
-
-### Algorithms
-
-- Sorting (Bubble, Merge, Quick, etc.)
-- Searching (Binary, Linear)
-- Graph Algorithms (BFS, DFS)
-- Dynamic Programming
-- And more...
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how you can contribute:
-
-### Getting Started
+## Contributing
 
 1. Fork the repository
-2. Create your feature branch:
-   ```bash
-   git checkout -b username/feature/feature-name
-   ```
-   or for fixes:
-   ```bash
-   git checkout -b username/fix/fix-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m 'Add some feature'
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin username/feature/feature-name
-   ```
-5. Open a Pull Request targeting the `dev` branch
+2. Create your feature branch: `git checkout -b feat/your-feature`
+3. Commit changes: `git commit -m 'feat: add your feature'`
+4. Push: `git push origin feat/your-feature`
+5. Open a Pull Request to `main`
 
-### Contribution Guidelines
-
-- Always pull from `main` before creating a new branch or PR
-- Follow the existing code style and naming conventions
-- Write clear, descriptive commit messages
-- Add appropriate comments to your code
-- Update documentation as needed
-- Add tests for new features when possible
-
-### Adding a New Algorithm or Data Structure
-
-1. Create a new component in the appropriate directory
-2. Follow the existing pattern for visualization components
-3. Add the new item to the constants file in the helpers directory
-4. Update the dashboard to include the new item
-5. Add appropriate animations and explanations
-
-## 📝 Code Style Guidelines
-
-- Use TypeScript for type safety
-- Follow React best practices and hooks
-- Use TailwindCSS for styling
-- Keep components small and focused
-- Use meaningful variable and function names
-- Add JSDoc comments for functions and components
-
-## 🔄 Development Workflow
-
-1. Pick an issue to work on or create a new one
-2. Discuss approach in the issue thread if needed
-3. Create a branch following the naming convention
-4. Implement your changes
-5. Test thoroughly
-6. Create a pull request to the `dev` branch
-7. Address review feedback
-8. Once approved, your changes will be merged
-
-## 📚 Learning Resources
-
-If you're new to algorithms and data structures, here are some resources to help you get started:
-
-- [Introduction to Algorithms](https://mitpress.mit.edu/books/introduction-algorithms-third-edition)
-- [Visualgo](https://visualgo.net/en) - Algorithm visualization
-- [GeeksforGeeks](https://www.geeksforgeeks.org/) - Data structures and algorithms tutorials
-- [Big-O Cheat Sheet](https://www.bigocheatsheet.com/) - Time and space complexity reference
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgements
-
-- [React](https://reactjs.org/)
-- [TailwindCSS](https://tailwindcss.com/)
-- [Shadcn UI](https://ui.shadcn.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [React Icons](https://react-icons.github.io/react-icons/)
-
-## 📞 Contact
+## Contact
 
 - Kuldeep Ahlawat - [LinkedIn](https://www.linkedin.com/in/imkuldeepahlawat/)
 - Project Link: [https://github.com/imkuldeepahlawat/Big-O-Circus](https://github.com/imkuldeepahlawat/Big-O-Circus)
