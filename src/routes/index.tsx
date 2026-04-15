@@ -91,6 +91,24 @@ const DisjointSetDataStructure = lazy(
 const BloomFilterDataStructure = lazy(
   () => import('@/components/data-structures/BloomFilterDataStructure')
 );
+const SelfOrganizingListDataStructure = lazy(
+  () => import('@/components/data-structures/SelfOrganizingListDataStructure')
+);
+const UnrolledLinkedListDataStructure = lazy(
+  () => import('@/components/data-structures/UnrolledLinkedListDataStructure')
+);
+const XORLinkedListDataStructure = lazy(
+  () => import('@/components/data-structures/XORLinkedListDataStructure')
+);
+const SparseMatrixDataStructure = lazy(
+  () => import('@/components/data-structures/SparseMatrixDataStructure')
+);
+const SuffixArrayDataStructure = lazy(
+  () => import('@/components/data-structures/SuffixArrayDataStructure')
+);
+const RopeDataStructure = lazy(
+  () => import('@/components/data-structures/RopeDataStructure')
+);
 const LRUCacheDataStructure = lazy(
   () => import('@/components/data-structures/LRUCacheDataStructure')
 );
@@ -325,6 +343,30 @@ const routes: RouteObject[] = [
       {
         path: 'ds-bloom-filter',
         element: withSuspense(BloomFilterDataStructure),
+      },
+      {
+        path: 'ds-self-organizing-list',
+        element: withSuspense(SelfOrganizingListDataStructure),
+      },
+      {
+        path: 'ds-unrolled-linked-list',
+        element: withSuspense(UnrolledLinkedListDataStructure),
+      },
+      {
+        path: 'ds-xor-linked-list',
+        element: withSuspense(XORLinkedListDataStructure),
+      },
+      {
+        path: 'ds-sparse-matrix',
+        element: withSuspense(SparseMatrixDataStructure),
+      },
+      {
+        path: 'ds-suffix-array',
+        element: withSuspense(SuffixArrayDataStructure),
+      },
+      {
+        path: 'ds-rope',
+        element: withSuspense(RopeDataStructure),
       },
       {
         path: 'ds-lru-cache',
