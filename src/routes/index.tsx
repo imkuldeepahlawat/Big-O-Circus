@@ -207,6 +207,24 @@ const PrimCircus = lazy(
 const HuffmanCodingCircus = lazy(
   () => import('@/components/algorithms/HuffmanCodingCircus')
 );
+const LCSCircus = lazy(
+  () => import('@/components/algorithms/LCSCircus')
+);
+const KnapsackCircus = lazy(
+  () => import('@/components/algorithms/KnapsackCircus')
+);
+const LISCircus = lazy(
+  () => import('@/components/algorithms/LISCircus')
+);
+const KMPCircus = lazy(
+  () => import('@/components/algorithms/KMPCircus')
+);
+const SieveCircus = lazy(
+  () => import('@/components/algorithms/SieveCircus')
+);
+const BucketSortCircus = lazy(
+  () => import('@/components/algorithms/BucketSortCircus')
+);
 const JumpSearchCircus = lazy(
   () => import('@/components/algorithms/JumpSearchCircus')
 );
