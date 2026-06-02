@@ -5,8 +5,22 @@
   
   [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge&logo=vercel)](https://circus.kuldeepahlawat.in/)
   [![GitHub Stars](https://img.shields.io/github/stars/imkuldeepahlawat/Big-O-Circus?style=for-the-badge&logo=github)](https://github.com/imkuldeepahlawat/Big-O-Circus/stargazers)
+  [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
   [![License](https://img.shields.io/github/license/imkuldeepahlawat/Big-O-Circus?style=for-the-badge)](LICENSE)
 </div>
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Live Demo](#live-demo)
+- [What's Implemented](#whats-implemented)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Adding a New Visualization](#adding-a-new-visualization)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Overview
 
@@ -19,6 +33,7 @@ Big O Circus is an interactive web application that helps you understand algorit
 - **Step-by-Step Animation** - Watch each operation happen with color-coded highlighting
 - **Multiple Approaches** - Compare brute-force vs optimized solutions (e.g., Two Sum)
 - **Complexity Display** - See Big-O time and space complexity for every operation
+- **Docker Support** - Run the app locally in a container with a single command
 - **Auto-Deploy** - Pushes to main automatically deploy to GitHub Pages
 
 ## Live Demo
@@ -58,9 +73,9 @@ Visit the live application: [https://circus.kuldeepahlawat.in/](https://circus.k
 
 ### Problems (with solution visualizations)
 
-| Problem | Difficulty | Topics | Approaches |
-|---------|-----------|--------|------------|
-| Two Sum | Easy | Array, Hash Table | Brute Force O(n^2), Hash Map O(n) |
+| Problem | Difficulty | Topics | Time Complexity | Space Complexity |
+|---------|-----------|--------|-----------------|-----------------|
+| Two Sum | Easy | Array, Hash Table | O(n) with Hash Map | O(n) |
 
 ## Tech Stack
 
@@ -92,10 +107,17 @@ Open `http://localhost:5173` in your browser.
 
 ### Docker
 
+Run the entire app in a container — no local Node.js install required:
+
 ```bash
+# Build the image
 docker build -t big-o-circus-app .
+
+# Run the container
 docker run --name big-o-circus-app -p 8080:80 -d big-o-circus-app
 ```
+
+Then open `http://localhost:8080` in your browser.
 
 ## Project Structure
 
@@ -143,11 +165,15 @@ Big-O-Circus/
 
 ## Contributing
 
+We welcome contributions of all kinds — from fixing typos to adding brand-new 3D visualizations!
+
 1. Fork the repository
 2. Create your feature branch: `git checkout -b feat/your-feature`
 3. Commit changes: `git commit -m 'feat: add your feature'`
 4. Push: `git push origin feat/your-feature`
 5. Open a Pull Request to `main`
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on branch naming, commit message conventions, and code style.
 
 ## License
 
