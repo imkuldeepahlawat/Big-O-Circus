@@ -132,7 +132,8 @@ const RootLayout: React.FC<LayoutProps> = ({ children }) => {
               </span>
             </div>
             <span className='text-sm text-gray-500'>
-              © 2024 Big O Circus Made with ❤️ by Kuldeep Ahlawat
+              © {new Date().getFullYear()} Big O Circus Made with ❤️ by Kuldeep
+              Ahlawat
             </span>
           </div>
           <div className='flex items-center gap-6'>
