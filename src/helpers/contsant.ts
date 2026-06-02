@@ -323,11 +323,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
 
   // Miscellaneous
   {
-    color: 'red',
+    color: 'green',
     name: 'Bitboard',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-bitboard',
   },
   {
     color: 'red',
@@ -443,11 +443,11 @@ export const dataStructuresComponentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Round-Robin Database',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'ds-round-robin-database',
   },
 
   // Memory Management
@@ -666,11 +666,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-knapsack',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Matrix Chain Multiplication',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-matrix-chain-multiplication',
   },
   {
     color: 'green',
@@ -689,18 +689,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-kmp',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Rabin-Karp Algorithm',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-rabin-karp',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Longest Palindromic Substring',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-longest-palindromic-substring',
   },
   {
     color: 'red',
@@ -719,34 +719,34 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-graham-scan',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Jarvis March',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-jarvis-march',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Line Intersection',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-line-intersection',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Closest Pair of Points',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-closest-pair-of-points',
   },
 
   // Numerical Algorithms
   {
-    color: 'red',
+    color: 'green',
     name: 'Euclidean Algorithm ',
     path: '',
     tooltip: 'GCD',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-euclidean',
   },
   {
     color: 'green',
@@ -763,11 +763,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Exponentiation by Squaring',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-exponentiation-by-squaring',
   },
 
   // Divide and Conquer
@@ -786,11 +786,11 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'http://kuldeepahlawat.in',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Closest Pair of Points',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-closest-pair-of-points',
   },
 
   // Greedy Algorithms
@@ -802,18 +802,18 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-huffman',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Fractional Knapsack',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-fractional-knapsack',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Job Scheduling',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-job-scheduling',
   },
 
   // Backtracking
@@ -841,25 +841,25 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 
   // Bit Manipulation
   {
-    color: 'red',
+    color: 'green',
     name: 'Bit Counting',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-bit-counting',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Power Set',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-power-set',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Find the Missing Number',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-find-missing-number',
   },
 
   // Advanced Data Structures
@@ -901,32 +901,32 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
     link: 'algo-k-means',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'K-Nearest Neighbors ',
     path: '',
     tooltip: 'KNN',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-k-nearest-neighbors',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Naive Bayes Classifier',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-naive-bayes',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Linear Regression',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-linear-regression',
   },
   {
-    color: 'red',
+    color: 'green',
     name: 'Logistic Regression',
     path: '',
     tooltip: '',
-    link: 'http://kuldeepahlawat.in',
+    link: 'algo-logistic-regression',
   },
   {
     color: 'red',
@@ -938,7 +938,28 @@ export const algorithmsCompoentLinkList: componentLinkTT[] = [
 ];
 
 export const problemsLinkList: problemLinkTT[] = [
-  // Array Problems
+  // Array / Hashing Problems
+  {
+    color: 'green',
+    number: 217,
+    name: 'Contains Duplicate',
+    difficulty: 'Easy',
+    level: 'Junior',
+    topics: ['Array', 'Hash Table'],
+    tooltip: 'Return true if any value appears at least twice in the array.',
+    link: 'problem-contains-duplicate',
+  },
+  {
+    color: 'green',
+    number: 242,
+    name: 'Valid Anagram',
+    difficulty: 'Easy',
+    level: 'Junior',
+    topics: ['Array', 'Hash Table'],
+    tooltip:
+      'Return true if t is an anagram of s using a frequency count array.',
+    link: 'problem-valid-anagram',
+  },
   {
     color: 'green',
     number: 1,
@@ -949,5 +970,27 @@ export const problemsLinkList: problemLinkTT[] = [
     tooltip:
       'Given an array and a target, return indices of two numbers that add up to target.',
     link: 'problem-two-sum',
+  },
+  {
+    color: 'green',
+    number: 347,
+    name: 'Top K Frequent Elements',
+    difficulty: 'Medium',
+    level: 'Mid',
+    topics: ['Array', 'Hash Table'],
+    tooltip:
+      'Return the k most frequent elements using bucket sort or a min-heap.',
+    link: 'problem-top-k-frequent',
+  },
+  {
+    color: 'green',
+    number: 49,
+    name: 'Group Anagrams',
+    difficulty: 'Medium',
+    level: 'Mid',
+    topics: ['Array', 'Hash Table'],
+    tooltip:
+      'Group strings that are anagrams of each other using a sorted-key hash map.',
+    link: 'problem-group-anagrams',
   },
 ];

@@ -142,6 +142,12 @@ const LFUCacheDataStructure = lazy(
 const CircularBufferDataStructure = lazy(
   () => import('@/components/data-structures/CircularBufferDataStructure')
 );
+const RoundRobinDatabaseDataStructure = lazy(
+  () => import('@/components/data-structures/RoundRobinDatabaseDataStructure')
+);
+const BitboardDataStructure = lazy(
+  () => import('@/components/data-structures/BitboardDataStructure')
+);
 
 // Algorithms
 const BfsAlgorithmCircus = lazy(
@@ -201,26 +207,67 @@ const TopologicalSortCircus = lazy(
 const KruskalCircus = lazy(
   () => import('@/components/algorithms/KruskalCircus')
 );
-const PrimCircus = lazy(
-  () => import('@/components/algorithms/PrimCircus')
-);
+const PrimCircus = lazy(() => import('@/components/algorithms/PrimCircus'));
 const HuffmanCodingCircus = lazy(
   () => import('@/components/algorithms/HuffmanCodingCircus')
 );
-const LCSCircus = lazy(
-  () => import('@/components/algorithms/LCSCircus')
-);
+const LCSCircus = lazy(() => import('@/components/algorithms/LCSCircus'));
 const KnapsackCircus = lazy(
   () => import('@/components/algorithms/KnapsackCircus')
 );
-const LISCircus = lazy(
-  () => import('@/components/algorithms/LISCircus')
+const LISCircus = lazy(() => import('@/components/algorithms/LISCircus'));
+const KMPCircus = lazy(() => import('@/components/algorithms/KMPCircus'));
+const SieveCircus = lazy(() => import('@/components/algorithms/SieveCircus'));
+const EuclideanAlgorithmCircus = lazy(
+  () => import('@/components/algorithms/EuclideanAlgorithmCircus')
 );
-const KMPCircus = lazy(
-  () => import('@/components/algorithms/KMPCircus')
+const ExponentiationBySquaringCircus = lazy(
+  () => import('@/components/algorithms/ExponentiationBySquaringCircus')
 );
-const SieveCircus = lazy(
-  () => import('@/components/algorithms/SieveCircus')
+const FractionalKnapsackCircus = lazy(
+  () => import('@/components/algorithms/FractionalKnapsackCircus')
+);
+const BitCountingCircus = lazy(
+  () => import('@/components/algorithms/BitCountingCircus')
+);
+const PowerSetCircus = lazy(
+  () => import('@/components/algorithms/PowerSetCircus')
+);
+const RabinKarpCircus = lazy(
+  () => import('@/components/algorithms/RabinKarpCircus')
+);
+const LongestPalindromicSubstringCircus = lazy(
+  () => import('@/components/algorithms/LongestPalindromicSubstringCircus')
+);
+const JobSchedulingCircus = lazy(
+  () => import('@/components/algorithms/JobSchedulingCircus')
+);
+const MissingNumberCircus = lazy(
+  () => import('@/components/algorithms/MissingNumberCircus')
+);
+const JarvisMarchCircus = lazy(
+  () => import('@/components/algorithms/JarvisMarchCircus')
+);
+const LineIntersectionCircus = lazy(
+  () => import('@/components/algorithms/LineIntersectionCircus')
+);
+const ClosestPairOfPointsCircus = lazy(
+  () => import('@/components/algorithms/ClosestPairOfPointsCircus')
+);
+const MatrixChainMultiplicationCircus = lazy(
+  () => import('@/components/algorithms/MatrixChainMultiplicationCircus')
+);
+const KNearestNeighborsCircus = lazy(
+  () => import('@/components/algorithms/KNearestNeighborsCircus')
+);
+const NaiveBayesClassifierCircus = lazy(
+  () => import('@/components/algorithms/NaiveBayesClassifierCircus')
+);
+const LinearRegressionCircus = lazy(
+  () => import('@/components/algorithms/LinearRegressionCircus')
+);
+const LogisticRegressionCircus = lazy(
+  () => import('@/components/algorithms/LogisticRegressionCircus')
 );
 const BucketSortCircus = lazy(
   () => import('@/components/algorithms/BucketSortCircus')
@@ -240,13 +287,21 @@ const SudokuSolverCircus = lazy(
 const GrahamScanCircus = lazy(
   () => import('@/components/algorithms/GrahamScanCircus')
 );
-const KMeansCircus = lazy(
-  () => import('@/components/algorithms/KMeansCircus')
-);
+const KMeansCircus = lazy(() => import('@/components/algorithms/KMeansCircus'));
 
 // Problems
-const TwoSumProblem = lazy(
-  () => import('@/components/problems/TwoSumProblem')
+const TwoSumProblem = lazy(() => import('@/components/problems/TwoSumProblem'));
+const ContainsDuplicateProblem = lazy(
+  () => import('@/components/problems/ContainsDuplicateProblem')
+);
+const ValidAnagramProblem = lazy(
+  () => import('@/components/problems/ValidAnagramProblem')
+);
+const TopKFrequentProblem = lazy(
+  () => import('@/components/problems/TopKFrequentProblem')
+);
+const GroupAnagramsProblem = lazy(
+  () => import('@/components/problems/GroupAnagramsProblem')
 );
 
 // Pages
@@ -451,8 +506,16 @@ const routes: RouteObject[] = [
         element: withSuspense(LFUCacheDataStructure),
       },
       {
+        path: 'ds-bitboard',
+        element: withSuspense(BitboardDataStructure),
+      },
+      {
         path: 'ds-circular-buffer',
         element: withSuspense(CircularBufferDataStructure),
+      },
+      {
+        path: 'ds-round-robin-database',
+        element: withSuspense(RoundRobinDatabaseDataStructure),
       },
 
       // Algorithms routes
@@ -565,6 +628,74 @@ const routes: RouteObject[] = [
         element: withSuspense(SieveCircus),
       },
       {
+        path: 'algo-euclidean',
+        element: withSuspense(EuclideanAlgorithmCircus),
+      },
+      {
+        path: 'algo-exponentiation-by-squaring',
+        element: withSuspense(ExponentiationBySquaringCircus),
+      },
+      {
+        path: 'algo-fractional-knapsack',
+        element: withSuspense(FractionalKnapsackCircus),
+      },
+      {
+        path: 'algo-bit-counting',
+        element: withSuspense(BitCountingCircus),
+      },
+      {
+        path: 'algo-power-set',
+        element: withSuspense(PowerSetCircus),
+      },
+      {
+        path: 'algo-rabin-karp',
+        element: withSuspense(RabinKarpCircus),
+      },
+      {
+        path: 'algo-longest-palindromic-substring',
+        element: withSuspense(LongestPalindromicSubstringCircus),
+      },
+      {
+        path: 'algo-job-scheduling',
+        element: withSuspense(JobSchedulingCircus),
+      },
+      {
+        path: 'algo-find-missing-number',
+        element: withSuspense(MissingNumberCircus),
+      },
+      {
+        path: 'algo-jarvis-march',
+        element: withSuspense(JarvisMarchCircus),
+      },
+      {
+        path: 'algo-line-intersection',
+        element: withSuspense(LineIntersectionCircus),
+      },
+      {
+        path: 'algo-closest-pair-of-points',
+        element: withSuspense(ClosestPairOfPointsCircus),
+      },
+      {
+        path: 'algo-matrix-chain-multiplication',
+        element: withSuspense(MatrixChainMultiplicationCircus),
+      },
+      {
+        path: 'algo-k-nearest-neighbors',
+        element: withSuspense(KNearestNeighborsCircus),
+      },
+      {
+        path: 'algo-naive-bayes',
+        element: withSuspense(NaiveBayesClassifierCircus),
+      },
+      {
+        path: 'algo-linear-regression',
+        element: withSuspense(LinearRegressionCircus),
+      },
+      {
+        path: 'algo-logistic-regression',
+        element: withSuspense(LogisticRegressionCircus),
+      },
+      {
         path: 'algo-bucket-sort',
         element: withSuspense(BucketSortCircus),
       },
@@ -599,8 +730,24 @@ const routes: RouteObject[] = [
         element: withSuspense(ProblemsDashboard),
       },
       {
+        path: 'problem-contains-duplicate',
+        element: withSuspense(ContainsDuplicateProblem),
+      },
+      {
+        path: 'problem-valid-anagram',
+        element: withSuspense(ValidAnagramProblem),
+      },
+      {
         path: 'problem-two-sum',
         element: withSuspense(TwoSumProblem),
+      },
+      {
+        path: 'problem-top-k-frequent',
+        element: withSuspense(TopKFrequentProblem),
+      },
+      {
+        path: 'problem-group-anagrams',
+        element: withSuspense(GroupAnagramsProblem),
       },
 
       // Catch-all route for 404
